@@ -18,10 +18,45 @@ goal.chunk <- list(type="comprehend-sentence", name="")
 
 
 ## -- Picture chunks --
-pic.chunks = array(list(NULL), c(4,1))
+p.knopf   = list(type="syn-obj", 
+                 ctime=0, 
+                 npres=1, 
+                 name="knopf", 
+                 cat="DP", 
+                 gend="masc", 
+                 col="blau", 
+                 animacy="inani", 
+                 ref="pic"
+                 )
 
-p.knopf   = list(type="syn-obj", ctime=0, npres=1, name="knopf", cat="DP", gend="masc", col="blau", animacy="inani", ref="pic")
-p.flasche = list(type="syn-obj", ctime=0, npres=1, name="flasche", cat="DP", gend="fem", col="blau", animacy="inani", ref="pic")
+p.flasche = list(type="syn-obj", 
+                 ctime=0, 
+                 npres=1, 
+                 name="flasche", 
+                 cat="DP", 
+                 gend="fem", 
+                 col="blau", 
+                 animacy="inani", 
+                 ref="pic"
+                 )
+
+# The chunk for the question mark "Fragezeichen"
+# 
+# Sol Lago: [20.01.2024]
+# 1. The question mark chunk in memory should not have a gender feature 
+# (e.g., “neuter”). This is because participants are told that 
+# the question mark stands for “owner of the object unknown”. 
+# Therefore, the question mark symbol is not part of the linguistic input. 
+# It’s not mapped to a specific linguistic element, it’s just a place holder 
+# for “unknown” or “undefined”.
+# 2. The question mark is shown in black
+p.fragezeichen = list(type="NA-obj", 
+                      ctime=0, 
+                      npres=1, 
+                      name="fragezeichen", 
+                      col="schwarz", 
+                      ref="pic"
+                      )
 
 martin    = list(type="syn-obj", ctime=0, npres=1, name="martin", cat="DP", gend="masc", animacy="ani")
 sarah     = list(type="syn-obj", ctime=0, npres=1, name="sarah", cat="DP", gend="fem", animacy="ani")

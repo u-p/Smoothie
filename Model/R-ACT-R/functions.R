@@ -137,8 +137,6 @@ add.chunk <- function(newChunk){
 
 add.time <- function(dur, txt='NA'){
   
-  # UP: 01.11.2021
-  # moved up here
   if(verbose.func){
     print("In add.time", quote=FALSE)
     print(a.out)
@@ -147,50 +145,14 @@ add.time <- function(dur, txt='NA'){
 	currTime <<- currTime + dur
 
 	if(getActivation){
-	  # a.out = c(round(currSim), currStep, txt, round(currTime*1000), # 'currStep' doesn't make sense; 'currStage' is more appropriate here
 	  a.out = c(round(currSim), currStage, txt, round(currTime*1000),
 	            round(get.activation("knopf"), 4), round(get.activation("flasche"), 4),
 	            round(get.activation("ballon"), 4), round(get.activation("blume"), 4))
-	  
-	  # cSim = round(currSim)
-	  # cStep = currStep
-	  # cTime = round(currTime*1000)
-	  # act.knopf = round(get.activation("knopf"), 4)
-	  # act.flasche = round(get.activation("flasche"), 4)
-	  # act.ballon = round(get.activation("ballon"), 4)
-	  # act.blume = round(get.activation("blume"), 4)
-	  
 	}
 
-  # UP: 01.11.2021
-  # moved up, right at the beginning of the function.. that's where it should be!
-	# if(verbose.func){
-	#   print("In add.time", quote=FALSE)
-	#   print(a.out)
-	# }
-
-	if(getActivation){	
-	# if(exists("act.out")){
-	  # print("In add.time", quote=FALSE)
-	  # print(a.out)
-	  # print(length(a.out))
-	  #	  print(head(act.out))
-	  # print(tail(act.out))
-	  # print(dim(act.out))
-	  # print(c(cSim, cStep, cTime, act.knopf, act.flasche, act.ballon, act.blume))
-	  # print(length(c(cSim, cStep, cTime, act.knopf, act.flasche, act.ballon, act.blume)))
-	  # print(dim(matrix(a.out, nrow = 1)))
-	  #	  print(dim(rbind(act.out, a.out)))
-	  # act.out <<- rbind(act.out, c(cSim, cStep, cTime, act.knopf, act.flasche, act.ballon, act.blume))
-	  
+	if(getActivation){
 	  act.out <<- rbind(act.out, a.out)
-	# }else
-	# {
-	  # act.out <<- matrix(a.out, 1, length(a.out))
-	# }
 	}
-	# ============
-
 
 	if(verbose){
 	  print("", quote=FALSE)

@@ -13,7 +13,7 @@ fName.det =       "R-ACT-R/output-10k/cond-3/act-out-1.txt"
 pronOnsetStep = 3
 nEpochs = 43  # the sample number (in total 43 samples / simulation) for match and mismatch
 nEpochsDet = 40  # the sample number (in total 40 samples / simulation) for determiner condition (no antecedent retrieval)
-nSim = 10000
+nSim = 1000
 
 
 # MATCH
