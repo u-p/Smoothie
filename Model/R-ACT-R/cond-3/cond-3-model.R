@@ -309,6 +309,6 @@ util.steps[8,] = p.match.knopf
 ## -- input stages
 input.stages = c("empty", "klicke_auf", "det", "p.match.det", "blauen", "p.match.blauen", "knopf", "p.match.knopf")
 prods.names = c("empty", "klicke_auf", "det", "p.match.det", "blauen", "p.match.blauen", "knopf", "p.match.knopf")
-lex.ret = c(0, 1, 1, 0, 1, 0, 1, 0) # denotes of there is lexical input at that stage
+lex.ret = c(0, 1, 1, 0, 1, 0, 1, 0) # denotes if there is lexical input at that stage
 
 
