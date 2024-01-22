@@ -16,8 +16,12 @@
 
 
 ######################################################
-# computes base activation and adds noise for each
-# chunk in the retrieval que
+# Calculates current activation of the chunk specified 
+# in 'chunkName'. This is basically the base-level
+# activation + spreading activation + noise.
+# NOTE: The influence of 'Partial Match' is excluded
+# since PM is relevant only at retrieval (the variable
+# 'partial.match' is just a placeholder conveying PM=0)
 ######################################################
 
 get.activation <- function(chunkName){
