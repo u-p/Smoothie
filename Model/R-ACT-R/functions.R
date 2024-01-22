@@ -35,7 +35,8 @@ get.activation <- function(chunkName){
   if(!is.null(cues.list)){
     W = par.ga/(length(cues.list[,2]) - 1 + 1)
     #! length '- 1' to exclude 'type' feature
-    #! length '+ 1' to exclude 'goal-cat' feature which is normally part of the goal buffer
+    #! length '+ 1' to include 'goal-cat' feature which is normally 
+    #! part of the goal buffer
     
     
     if(!is.null(chID)){
