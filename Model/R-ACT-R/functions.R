@@ -76,6 +76,18 @@ get.activation <- function(chunkName){
     # # 
     # base.act = Bi(chID)
   }
+  
+  # *******************
+  # print(paste("SA: ", spread.act))
+  # print(paste("BA: ", base.act))
+  # print(paste("PM: ", partial.match))
+  # 
+  # act = spread.act + base.act + partial.match
+  # 
+  # if(act > 10){
+  #   print("!!! act above 10")
+  #   # print(act)
+  # }
 
   return(act = spread.act + base.act + partial.match)
 
@@ -86,12 +98,25 @@ get.activation <- function(chunkName){
 ######################################################
 
 noise2 <- function(){
+  noise = randNo[sample(1:1000, 1)]
+  
   if(verbose.func){
-    print("in Noise 2", quote=FALSE)
+    print(paste("in Noise 2:", noise), quote=FALSE)
   }
   # generate a random number between 1 and 1000 that functions
   # as the index into an array of random numbers of size 1000
-  return(randNo[floor(runif(1)*1000)])
+  return(noise)
+  
+  # ****************
+  # num = runif(1)
+  # index = floor(num*1000)
+  # index = sample(1:1000, 1)
+  # noise = randNo[index]
+  # # print(num)
+  # print(index)
+  # print(noise)
+  # return(noise)
+  
 }
 
 
@@ -138,16 +163,22 @@ add.chunk <- function(newChunk){
 add.time <- function(dur, txt='NA'){
   
   if(verbose.func){
-    print("In add.time", quote=FALSE)
-    print(a.out)
+    print("---- In add.time ----", quote=FALSE)
   }
 
 	currTime <<- currTime + dur
 
+	if(verbose.func){
+	  print(paste("Updated Time:", currTime), quote=FALSE)
+	}
+	
 	if(getActivation){
 	  a.out = c(round(currSim), currStage, txt, round(currTime*1000),
-	            round(get.activation("knopf"), 4), round(get.activation("flasche"), 4),
-	            round(get.activation("ballon"), 4), round(get.activation("blume"), 4))
+	            round(get.activation("knopf"), 4), 
+	            round(get.activation("flasche"), 4)
+	            # round(get.activation("ballon"), 4), 
+	            # round(get.activation("blume"), 4)
+	            )
 	}
 
 	if(getActivation){
@@ -157,6 +188,7 @@ add.time <- function(dur, txt='NA'){
 	if(verbose){
 	  print("", quote=FALSE)
 	  print(paste("Time: ", currTime), quote=FALSE)
+	  print(a.out)
 	  }
 }
 
@@ -625,7 +657,9 @@ run.model <- function(model, dir, run){
   output.latency <<- array(, c(sims,stages))
   output.prod <<- array(, c(sims,stages))
 
-  act.out <<- matrix(nrow = 1, ncol = 8)
+  # Table for recording activation values for required chunks
+  dt.out.cols <<- c("simNo", "stepNo", 'subStep', "time", "knopf.act", "flasche.act")
+  act.out <<- matrix(nrow = 1, ncol = length(dt.out.cols))
   
   params = as.data.frame(rbind(c(par.ga, par.mas, par.bll, par.ans, par.lf, par.rt, par.mp, par.ms, par.md, par.dat, par.egs)))
   colnames(params)=c("goal.act", "mas", "decay", "act.noise", "latency", "ret.thr", "match.sc", "max.sim", "max.diff", "prod.tm", "prod.noise")
@@ -674,6 +708,11 @@ for(i in c(1:stages)){
 		p.flasche[["ctime"]] = currTime
 		add.chunk(p.flasche)
 		
+		# Smoothie [20.01.2024]
+		p.fragezeichen[["ctime"]] = currTime
+		add.chunk(p.fragezeichen)
+		
+		# Expt-1 had 4 objects on the screen
 		if(EXPT1){
 		  p.ballon[["ctime"]] = currTime
 		  add.chunk(p.ballon)
@@ -720,7 +759,7 @@ if(lex.ret[i]){
   #! time for: lexical-retrieval-request
   add.time(par.dat, txt='LexRt')
   if(verbose){
-    print(paste("Production fired:", " Lexical-Retrieval-Request-", input.stages[i], sep=""), quote=FALSE)
+    print(paste("Production fired:", "Lexical-Retrieval-Request-", input.stages[i], sep=""), quote=FALSE)
   }
 }
 
@@ -851,22 +890,25 @@ if(lex.ret[i]){
 	# UP 2020
 	dt.out <<- as.data.frame(act.out)
 	# colnames(dt.out) <<- c("simNo", "stepNo", "time", "knopf.act", "flasche.act")
-	colnames(dt.out) <<- c("simNo", "stepNo", 'step', "time", "knopf.act", "flasche.act", "ballon.act", "blume.act")
+	# colnames(dt.out) <<- c("simNo", "stepNo", 'step', "time", "knopf.act", "flasche.act", "ballon.act", "blume.act")
+	colnames(dt.out) <<- dt.out.cols
 	
 	colnames(dt.ret) <<- input.stages
 	colnames(dt.time) <<- input.stages
 #	colnames(dt.latency) <<- input.stages
 	colnames(dt.prod) <<- input.stages
 
-
-	write.table(params, paste(dir,"/params-", run, ".txt", sep=""), quote=FALSE, row.names=FALSE)
-	write.table(dt.ret, paste(dir, "/retrievals-", run, ".txt", sep=""), quote=FALSE, row.names=FALSE)
+	write.csv(params, paste(dir,"/params-", run, ".csv", sep=""), quote=FALSE, row.names=FALSE)
+	write.csv(dt.ret, paste(dir, "/retrievals-", run, ".csv", sep=""), quote=FALSE, row.names=FALSE)
 #	write.table(dt.latency, paste(dir, "/ret-latency-", run, ".txt", sep=""), quote=FALSE, row.names=FALSE)
 
-	write.table(dt.time, paste(dir, "/ret-times-", run, ".txt", sep=""), quote=FALSE, row.names=FALSE)
-	write.table(dt.out, paste(dir, "/act-out-", run, ".txt", sep=""), quote=FALSE, row.names=FALSE)
+	write.csv(dt.time, paste(dir, "/ret-times-", run, ".csv", sep=""), quote=FALSE, row.names=FALSE)
+	write.csv(dt.out, paste(dir, "/act-out-", run, ".csv", sep=""), quote=FALSE, row.names=FALSE)
 	# write.table(dt.prod, paste(dir,"/productions-", run, ".txt", sep=""), quote=FALSE, row.names=FALSE)
 
-	write.table(cue.weight, paste(dir,"/weights-", run, ".txt", sep=""), quote=FALSE, col.names = FALSE)
+	# write.table(cue.weight, paste(dir,"/weights-", run, ".csv", sep=""), quote=FALSE, col.names=FALSE)
+	df.cue.weight = data.frame(cName = row.names(cue.weight), cWeight = cue.weight)
+	write.csv(df.cue.weight, paste(dir,"/weights-", run, ".csv", sep=""), quote=FALSE, row.names=FALSE)
+	
 	}
 

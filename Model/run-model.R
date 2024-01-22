@@ -34,6 +34,7 @@ run = 1
 
 # which experiment to run the model first
 # run Experiment 2 models
+# Expt-1 had 4 objects on the screen
 EXPT1 = FALSE
 
 # print('', quote=F)

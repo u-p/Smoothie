@@ -34,10 +34,10 @@ maxCues=5
 
 
 #! Print trace & function calls to stdout
-verbose=FALSE
-# verbose=TRUE
-verbose.func=FALSE
-# verbose.func=TRUE
+# verbose=FALSE
+# verbose.func=FALSE
+verbose=TRUE
+verbose.func=TRUE
 
 
 
