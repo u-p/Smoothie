@@ -102,26 +102,16 @@ get.activation <- function(chunkName){
 ######################################################
 
 noise2 <- function(){
+  # generate a random number between 1 and 1000 that functions
+  # as the index into an array of random numbers of size 1000
   noise = randNo[sample(1:1000, 1)]
   
   if(verbose.func){
     print(paste("in Noise 2:", noise), quote=FALSE)
   }
-  # generate a random number between 1 and 1000 that functions
-  # as the index into an array of random numbers of size 1000
+
   return(noise)
-  
-  # ****************
-  # num = runif(1)
-  # index = floor(num*1000)
-  # index = sample(1:1000, 1)
-  # noise = randNo[index]
-  # # print(num)
-  # print(index)
-  # print(noise)
-  # return(noise)
-  
-}
+  }
 
 
 ######################################################
