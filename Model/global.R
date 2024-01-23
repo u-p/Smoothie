@@ -8,7 +8,7 @@ HOME = getwd()
 
 
 #! no. of simulations to run
-sims = 5
+sims = 10000
 
 
 ## -- Cue weighting --

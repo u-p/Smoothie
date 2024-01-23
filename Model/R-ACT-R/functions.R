@@ -49,13 +49,21 @@ get.activation <- function(chunkName){
         while(k <=length(currChunk)){
           if(cues.list[[j,2]] == currChunk[k]){
             spread = (par.mas - log(as.numeric(cues.list[[j,3]])))
-            spread.act = W * spread
+            # ***************************************
+            # print(paste("spread: ", spread))
+            
+            # ***************************************
+            # spread.act = W * spread
+            spread.act = spread.act + W * spread
+            
 
             if(verbose){
               print(paste("spreading act", spread.act, "(W =", W, ", Sij =", spread, ") from", 
                         cues.list[[j,2]], "to chunk", currChunk[["name"]]), quote=FALSE)
               }
-
+            # ***************************************
+            # print(paste("cue: ", j, "chunk feature", k, "spread.act =", spread.act))
+            
           }
           k=k+1
         }
@@ -70,8 +78,10 @@ get.activation <- function(chunkName){
     # base.act = Bi(chID) + noise(0, par.ans)
 
     # equation with a new 'noise' function
+    # ***************************************
     base.act = Bi(chID) + noise2()
-
+    # base.act = Bi(chID)
+    
     # # 
     # # the noise should not be included since 'par.ans' captures the
     # # noise only at the time of retrieval
@@ -93,6 +103,9 @@ get.activation <- function(chunkName){
   #   print("!!! act above 10")
   #   # print(act)
   # }
+  
+  # ***************************************
+  # print(paste("spread.act =", spread.act))
 
   return(act = spread.act + base.act + partial.match)
 
@@ -156,7 +169,7 @@ add.chunk <- function(newChunk){
 ######################################################
 
 add.time <- function(dur, txt='NA'){
-  
+
   if(verbose.func){
     print("---- In add.time ----", quote=FALSE)
   }
