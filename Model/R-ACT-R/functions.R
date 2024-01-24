@@ -26,7 +26,7 @@
 
 get.activation <- function(chunkName){
   if(verbose.func){
-    print("in get.activation", quote=FALSE)
+    print("In get.activation", quote=FALSE)
   }
   
   spread.act = base.act = partial.match = 0
@@ -105,7 +105,8 @@ get.activation <- function(chunkName){
   # }
   
   # ***************************************
-  # print(paste("spread.act =", spread.act))
+  print(chunkName)
+  print(paste("[NEW] spread.act =", spread.act))
 
   return(act = spread.act + base.act + partial.match)
 
@@ -121,7 +122,7 @@ noise2 <- function(){
   noise = randNo[sample(1:1000, 1)]
   
   if(verbose.func){
-    print(paste("in Noise 2:", noise), quote=FALSE)
+    print(paste("In Noise 2:", noise), quote=FALSE)
   }
 
   return(noise)
@@ -172,6 +173,7 @@ add.time <- function(dur, txt='NA'){
 
   if(verbose.func){
     print("---- In add.time ----", quote=FALSE)
+    # print("In add.time", quote=FALSE)
   }
 
 	currTime <<- currTime + dur
@@ -206,7 +208,7 @@ add.time <- function(dur, txt='NA'){
 
 conflict.resolution <- function(stageNo){
 	if(verbose.func){
-		print("in conflict.resolution", quote=FALSE)
+		print("In conflict.resolution", quote=FALSE)
 		}
 		
 	prods = array(, c(steps,2))
@@ -281,7 +283,7 @@ check.goal <- function(){
 
 retrieval.request <- function(cues){
 	if(verbose.func){
-		print("in retrieval.request", quote=FALSE)
+		print("In retrieval.request", quote=FALSE)
 		}
 		
 	list.cues(cues)
@@ -314,7 +316,7 @@ retrieval.request <- function(cues){
 
 retrieve <- function(){
 	if(verbose.func){
-		print("in retrieve", quote=FALSE)
+		print("In retrieve", quote=FALSE)
 		}
 			
 	lhs = lhs.steps[[currStep,1]]
@@ -382,7 +384,7 @@ retrieve <- function(){
 
 list.cues <- function(cues){
 	if(verbose.func){
-		print("in list.cues", quote=FALSE)
+		print("In list.cues", quote=FALSE)
 		}
 		
 
@@ -432,7 +434,7 @@ list.cues <- function(cues){
 
 build.retQ <- function(){
 	if(verbose.func){
-		print("in build.retQ", quote=FALSE)
+		print("In build.retQ", quote=FALSE)
 		}
 
   # UMESH 2020
@@ -474,7 +476,7 @@ build.retQ <- function(){
 
 compute.act.spreading <- function(){
 	if(verbose.func){
-		print("in compute.act.spreading", quote=FALSE)
+		print("In compute.act.spreading", quote=FALSE)
 		}
 
 
@@ -508,6 +510,11 @@ compute.act.spreading <- function(){
 					}
 
 					ret.que[i,2] <<- ret.que[i,2] + act
+					
+					# ************************
+					print(currChunk[["name"]])
+					print(paste("[OLD] spread.act =", ret.que[i,2]))
+					
 					}
 				k=k+1
 				}
@@ -525,7 +532,7 @@ compute.act.spreading <- function(){
 
 compute.base.act <- function(){
 	if(verbose.func){
-		print("in compute.base.act", quote=FALSE)
+		print("In compute.base.act", quote=FALSE)
 		}
 
 	i=1
@@ -545,7 +552,7 @@ compute.base.act <- function(){
 
 Bi <- function(chunkNo){
 	if(verbose.func){
-		print("in Bi", quote=FALSE)
+		print("In Bi", quote=FALSE)
 		}
 
 	ret = ret.hist[chunkNo,]
@@ -578,7 +585,7 @@ Bi <- function(chunkNo){
 
 noise <- function(location, scale){
 	if(verbose.func){
-		print("in noise", quote=FALSE)
+		print("In noise", quote=FALSE)
 		}
 
 	n = rlogis(1, location=location, scale=scale)
@@ -609,7 +616,7 @@ ret.latency <- function(act){
 
 compute.partial.match <- function(){
 	if(verbose.func){
-		print("in compute.partial.match", quote=FALSE)
+		print("In compute.partial.match", quote=FALSE)
 		}
 
 	i=1
@@ -651,8 +658,6 @@ sort.retQ <- function(){
 	tmp = cbind(ret.que[order(ret.que[,2], decreasing=TRUE),1], ret.que[order(ret.que[,2], decreasing=TRUE),2])
 	ret.que <<- tmp
 	}
-
-
 
 
 ######################################################
@@ -767,7 +772,7 @@ if(lex.ret[i]){
   #! time for: lexical-retrieval-request
   add.time(par.dat, txt='LexRt')
   if(verbose){
-    print(paste("Production fired:", "Lexical-Retrieval-Request-", input.stages[i], sep=""), quote=FALSE)
+    print(paste("Production fired:", "Lexical-Retrieval-Request-", input.stages[i]), quote=FALSE)
   }
 }
 
@@ -790,11 +795,11 @@ if(lex.ret[i]){
 #! time for: Set-Retrieval-Cues
 	add.time(par.dat, txt='SetRC')
 	if(verbose){
-		print(paste("Production fired:", " Set-Retrieval-Cues-", input.stages[i], sep=""), quote=FALSE)
+		print(paste("Production fired:", "Set-Retrieval-Cues-", input.stages[i]), quote=FALSE)
 	}
 
 	if(length(names(ret))>0){
-		if(verbose){ print("------- retrieval --------", quote=FALSE)}
+		if(verbose){ print("------- Retrieval --------", quote=FALSE)}
 
 		retrieval.request(ret)
 		retrieve()
@@ -827,7 +832,7 @@ if(lex.ret[i]){
 
 	if(newChunkCreation){
 		if(verbose){
-			print("------- creation --------", quote=FALSE)
+			print("------- Chunk creation --------", quote=FALSE)
 			}
 
 		#! create new chunks in various buffers (VPb, NPb etc.)

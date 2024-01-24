@@ -8,13 +8,13 @@ currTime=0
 
 #! steps = no. of all possible retrieval-attachment pairs.
 #! If there are multiple options at a stage they are counted separately.
-steps=9 # cond-1 & 2
-# steps=8 # cond-3
+# steps=9 # cond-1 & 2
+steps=8 # cond-3
 
 
 #! stages = no. of input words/stages
-stages=9 # cond-1 & 2
-# stages=8 # cond-3
+# stages=9 # cond-1 & 2
+stages=8 # cond-3
 
 
 #! step tracker
@@ -34,10 +34,10 @@ maxCues=5
 
 
 #! Print trace & function calls to stdout
-verbose=FALSE
-verbose.func=FALSE
-# verbose=TRUE
-# verbose.func=TRUE
+# verbose=FALSE
+# verbose.func=FALSE
+verbose=TRUE
+verbose.func=TRUE
 
 
 
