@@ -1,15 +1,42 @@
 
-
 library(tidyverse)
+
+
+# Function that returns the first index of the column in 'data' where 
+# 'seq_len' no. of consecutive etnries in 'signif' are TRUE
+check_signif_ind <- function(data, seq_len) {
+  for(i in c(1: (dim(data)[1] - seq_len + 1))){
+    signif <- data$signif[i:(i+4)]
+    if(all(signif)){
+      return(data$subStepsNo[i])
+    }
+  }
+  print("No sequence found!!", quote=FALSE)
+  return(NA)
+}
+
+# Initialize some variables
+pronOnsetStep = DetOnsetStep = 3
+nSims <- 10000
+signif_seq_len <- 5 # no. of consecutive significant subSteps
+
 
 
 # Activation:
 
 # Condition 1 ---------
-# act.cond1 <- read_csv('R-ACT-R/output-5k_v2/cond-1/act-out-1.csv') %>% 
-act.cond1 <- read_csv('R-ACT-R/output-10k/cond-1/act-out-1.csv') %>% 
-  na.omit()
 
+# !! Somehow creating the 'subStepsNo' here screws up something in the tibble
+act.cond1 <- read_csv('R-ACT-R/output-10k/cond-1/act-out-1.csv') %>%
+  na.omit() %>%
+  group_by(simNo) %>%
+  mutate(subStepsNo = 1:n()) %>% 
+  ungroup()
+
+# act.cond1 <- read_csv('R-ACT-R/output-10k/cond-1/act-out-1.csv') %>% 
+#   na.omit()
+
+# Print mean activation values for Knopf and Flasche
 act.cond1 %>% 
   group_by(stepNo, subStep) %>% 
   summarise(time = mean(time), 
@@ -18,12 +45,7 @@ act.cond1 %>%
   arrange(time) %>% 
   print(n = Inf)
 
-act.cond1 %>% 
-  group_by(stepNo) %>% 
-  summarise(stepNoStart = min(time))
-
-
-# Generate fixations
+# Generate fixations ----
 
 # 'map_int()' is needed because otherwise sample() isn't called 
 # for each row, but only once since ifelse() evaluates for all rows
@@ -37,7 +59,7 @@ act.cond1 <- act.cond1 %>%
       return(sample(c(0, 1), 1))
     }
   })) %>% 
-  mutate(flasche.fix = 1- knopf.fix)
+  mutate(flasche.fix = 1 - knopf.fix)
 
 # Sanity check
 act.cond1 %>% 
@@ -45,6 +67,27 @@ act.cond1 %>%
   summarise(mean(knopf.fix), mean(flasche.fix))
 
 
+# # Add the number to the subSteps
+# act.cond1 <- act.cond1 %>% 
+#   group_by(simNo) %>%
+#   mutate(subStepsNo = 1:n())
+
+# Find the subStepsNo that leads to significant effect
+signif.cond1 <- act.cond1 %>% 
+  filter(stepNo >= pronOnsetStep) %>%
+  group_by(subStepsNo) %>%
+  summarise(signif = binom.test(sum(knopf.fix), n(), p = .5, 
+                                alternative = "greater")$p.value < 0.05) %>% 
+  check_signif_ind(seq_len = signif_seq_len)
+
+# Find the onset as the mean of the timestamp for that 'subStepsNo'
+onset.cond1 <- act.cond1 %>% 
+  filter(subStepsNo == signif.cond1) %>% 
+  summarise(mean(time)) %>% 
+  pull()
+
+
+# Create fixation probabilities
 fix.prob.cond1 <- act.cond1 %>%
   # filter(stepNo > 2) %>% 
   # group_by(stepNo, subStep) %>% 
@@ -69,7 +112,6 @@ steps <- subSteps %>%
   group_by(stepNo) %>% 
   summarise(stepStartTime = min(subSteptime))
 
-pronOnsetStep = DetOnsetStep = 3
 pronOnset = steps %>% 
   filter(stepNo == pronOnsetStep) %>% 
   pull(stepStartTime)
@@ -106,6 +148,112 @@ ggplot(fix.prob.cond1,
 
 
 
+# Condition 1 ---------
+
+# !! Somehow creating the 'subStepsNo' here screws up something in the tibble
+act.cond2 <- read_csv('R-ACT-R/output-10k/cond-1/act-out-1.csv') %>%
+  na.omit() %>%
+  group_by(simNo) %>%
+  mutate(subStepsNo = 1:n()) %>% 
+  ungroup()
+
+# act.cond2 <- read_csv('R-ACT-R/output-10k/cond-1/act-out-1.csv') %>% 
+#   na.omit()
+
+# Print mean activation values for Knopf and Flasche
+act.cond2 %>% 
+  group_by(stepNo, subStep) %>% 
+  summarise(time = mean(time), 
+            k.act = mean(knopf.act), 
+            f.act = mean(flasche.act)) %>% 
+  arrange(time) %>% 
+  print(n = Inf)
+
+# Generate fixations ----
+
+# 'map_int()' is needed because otherwise sample() isn't called 
+# for each row, but only once since ifelse() evaluates for all rows
+act.cond2 <- act.cond2 %>%
+  mutate(knopf.fix = map_int(seq_len(n()), ~ {
+    if (knopf.act[.x] > flasche.act[.x]) {
+      return(1)
+    } else if (knopf.act[.x] < flasche.act[.x]) {
+      return(0)
+    } else {
+      return(sample(c(0, 1), 1))
+    }
+  })) %>% 
+  mutate(flasche.fix = 1 - knopf.fix)
+
+# Sanity check
+act.cond2 %>% 
+  filter(knopf.act == flasche.act) %>% 
+  summarise(mean(knopf.fix), mean(flasche.fix))
+
+
+# # Add the number to the subSteps
+# act.cond2 <- act.cond2 %>% 
+#   group_by(simNo) %>%
+#   mutate(subStepsNo = 1:n())
+
+# Find the subStepsNo that leads to significant effect
+signif.cond2 <- act.cond2 %>% 
+  filter(stepNo >= pronOnsetStep) %>%
+  group_by(subStepsNo) %>%
+  summarise(signif = binom.test(sum(knopf.fix), n(), p = .5, 
+                                alternative = "greater")$p.value < 0.05) %>% 
+  check_signif_ind(seq_len = signif_seq_len)
+
+# Find the onset as the mean of the timestamp for that 'subStepsNo'
+onset.cond2 <- act.cond2 %>% 
+  filter(subStepsNo == signif.cond2) %>% 
+  summarise(mean(time)) %>% 
+  pull()
+
+
+# Create fixation probabilities
+fix.prob.cond2 <- act.cond2 %>%
+  # filter(stepNo > 2) %>% 
+  # group_by(stepNo, subStep) %>% 
+  group_by(stepNo) %>% 
+  summarise(time = mean(time), 
+            k.fix.prob = mean(knopf.fix), 
+            f.fix.prob = mean(flasche.fix)) %>% 
+  arrange(time) %>% 
+  pivot_longer(
+    cols = c("k.fix.prob", "f.fix.prob"), 
+    names_to = "fix.prob.type", 
+    values_to = "fix.prob"
+  )
+
+
+subSteps <- act.cond2 %>%
+  group_by(stepNo, subStep) %>%
+  summarise(subSteptime = mean(time)) %>% 
+  arrange(subSteptime)
+
+steps <- subSteps %>% 
+  group_by(stepNo) %>% 
+  summarise(stepStartTime = min(subSteptime))
+
+pronOnset = steps %>% 
+  filter(stepNo == pronOnsetStep) %>% 
+  pull(stepStartTime)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Condition 2 ---------
 # act.cond2 <- read_csv('R-ACT-R/output-5k_v2/cond-2/act-out-1.csv') %>% 
 act.cond2 <- read_csv('R-ACT-R/output-10k/cond-2/act-out-1.csv') %>% 
@@ -124,8 +272,12 @@ act.cond2 %>%
   summarise(stepNoStart = min(time))
 
 
-# Generate fixations
-
+# Generate fixations ----
+# 
+# Whichever of 'Knopf' and 'Flasche' has higher activation is
+# assumed to be fixated at that timestamp; if they are equal it's
+# decided randomly.
+# 
 # 'map_int()' is needed because otherwise sample() isn't called 
 # for each row, but only once since ifelse() evaluates for all rows
 act.cond2 <- act.cond2 %>%
