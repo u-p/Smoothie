@@ -37,27 +37,28 @@ run = 1
 # Expt-1 had 4 objects on the screen
 EXPT1 = FALSE
 
-print('', quote=F)
-print("Running cond - 1")
-setwd("cond-1")
-run.model("cond-1-model.R", "../output/cond-1/", run)
-print('', quote=F)
-print('', quote=F)
+# print('', quote=F)
+# print("Running cond - 1")
+# setwd("cond-1")
+# run.model("cond-1-model.R", "../output/cond-1/", run)
+# print('', quote=F)
+# print('', quote=F)
 
 # print('', quote=F)
 # print("Running cond - 2")
-# setwd("../cond-2")
+# # setwd("../cond-2")
+# setwd("cond-2")
 # run.model("cond-2-model.R", "../output/cond-2/", run)
 # print('', quote=F)
 # print('', quote=F)
 
-# print('', quote=F)
-# print('==========>')
-# print("Running cond - 3")
-# setwd("cond-3")
-# run.model("cond-3-model.R", "../output/cond-3/", run)
-# print('', quote=F)
-# print('', quote=F)
+print('', quote=F)
+print('==========>')
+print("Running cond - 3")
+setwd("cond-3")
+run.model("cond-3-model.R", "../output/cond-3/", run)
+print('', quote=F)
+print('', quote=F)
 
 
 #! go back to HOME
