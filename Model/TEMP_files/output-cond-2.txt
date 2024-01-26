@@ -1,0 +1,1888 @@
+[1] 
+[1] "Running cond - 2"
+  goal.act mas decay act.noise latency ret.thr match.sc max.sim max.diff
+1        1   3   0.5      0.25    0.04    -1.5     0.25       0       -1
+  prod.tm prod.noise
+1    0.05          0
+  1[1] 
+[1] 
+[1] =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+[1]                     Simulation 1                     
+[1] =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+[1] ---- In add.time ----
+[1] Updated Time: 0.05
+[1] in get.activation
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  0.05
+[1] "1"  "1"  "PC" "50" "0"  "0" 
+[1] ------ Adding picture chunks -------
+[1] adding chunk:
+[1]  type     ctime    npres    name     cat      gend     col      animacy
+[9]  ref    
+[1]  syn-obj  0.05     1        knopf    DP       masc     blau     inani  
+[9]  pic    
+[1] 
+[1] adding chunk:
+[1]  type     ctime    npres    name     cat      gend     col      animacy
+[9]  ref    
+[1]  syn-obj  0.05     1        flasche  DP       fem      blau     inani  
+[9]  pic    
+[1] 
+[1] adding chunk:
+[1]  type   ctime  npres  name   col    ref  
+[1]  NA-obj        0.05          1             fragezeichen  schwarz     
+[6]  pic         
+[1] 
+[1] adding chunk:
+[1]  type     ctime    npres    name     cat      gend     animacy
+[1]  syn-obj  0.05     1        martin   DP       masc     ani    
+[1] 
+[1] adding chunk:
+[1]  type     ctime    npres    name     cat      gend     animacy
+[1]  syn-obj  0.05     1        sarah    DP       fem      ani    
+[1] 
+[1] 
+[1] ===============   Stage  1 : empty   ===============
+[1] in conflict.resolution
+[1] in noise
+[1] Noise:  0
+[1] Production:  empty Utility:  Utility+Noise:  0 0
+[1] Production selected: empty
+[1] ---- In add.time ----
+[1] Updated Time: 0.1
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  1.497866136777
+[1] in Noise 2: 0.215888396908143
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  1.497866136777
+[1] in Noise 2: -0.306116494727333
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  0.1
+[1] "1"      "1"      "SetRC"  "100"    "1.7138" "1.1917"
+[1] Production fired: Set-Retrieval-Cues-empty
+[1] ---- In add.time ----
+[1] Updated Time: 0.15
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  1.15129254649702
+[1] in Noise 2: -0.292469760284081
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  1.15129254649702
+[1] in Noise 2: -0.0356423154801698
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  0.15
+[1] "1"      "1"      "Att"    "150"    "0.8588" "1.1157"
+[1] Production fired: Attach-empty
+[1] ------- creation --------
+[1] adding chunk:
+[1]  type   cat    name   ctime  npres
+[1]  syn-obj  IP       ip       0.15     1      
+[1] 
+[1] 
+[1] ===============   Stage  2 : klicke_auf   ===============
+[1] ---- In add.time ----
+[1] Updated Time: 0.2
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.948559992442941
+[1] in Noise 2: 0.401000038980858
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.948559992442941
+[1] in Noise 2: 0.124366701597707
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  0.2
+[1] "1"      "2"      "FndL"   "200"    "1.3496" "1.0729"
+[1] Production fired: Find-Location-Of-Next-Word
+[1] ---- In add.time ----
+[1] Updated Time: 0.25
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.80471895621705
+[1] in Noise 2: -0.185424311419408
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.80471895621705
+[1] in Noise 2: -0.127697613053287
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  0.25
+[1] "1"      "2"      "ATNW"   "250"    "0.6193" "0.677" 
+[1] Production fired: Attend-To-Next-Word
+[1] ---- In add.time ----
+[1] Updated Time: 0.335
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.627633049356743
+[1] in Noise 2: -0.208083406015145
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.627633049356743
+[1] in Noise 2: 0.18371102329914
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  0.335
+[1] "1"      "2"      "VisEn"  "335"    "0.4195" "0.8113"
+[1] Visual encoding done
+[1] ---- In add.time ----
+[1] Updated Time: 0.385
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.546812373578535
+[1] in Noise 2: 1.5783425726349
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.546812373578535
+[1] in Noise 2: 0.489948052864603
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  0.385
+[1] "1"      "2"      "LexRt"  "385"    "2.1252" "1.0368"
+[1] Production fired:Lexical-Retrieval-Request-klicke_auf
+[1] in conflict.resolution
+[1] in noise
+[1] Noise:  0
+[1] Production:  klicke_auf Utility:  Utility+Noise:  0 0
+[1] Production selected: klicke_auf
+[1] ---- In add.time ----
+[1] Updated Time: 0.435
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.477255972347176
+[1] in Noise 2: -0.567489864910748
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.477255972347176
+[1] in Noise 2: -0.226420895831398
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  0.435
+[1] "1"       "2"       "SetRC"   "435"     "-0.0902" "0.2508" 
+[1] Production fired: Set-Retrieval-Cues-klicke_auf
+[1] ------- retrieval --------
+[1] in retrieval.request
+[1] in list.cues
+[1] cue 1 : type = syn-obj
+[1] cue 2 : cat = IP
+[1] in build.retQ
+     [,1] [,2]    [,3]
+[1,] type syn-obj 1   
+[2,] cat  IP      2   
+[1] 
+[1]                  Activation Spreading
+[1] in compute.act.spreading
+[1] spreading act 1.15342640972003 (W = 0.5 , Sij = 2.30685281944005 ) from IP to chunk ip
+[1] "ip"
+[1] "[OLD] spread.act = 1.15342640972003"
+[1] in compute.base.act
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.477255972347176
+[1] in noise
+[1] Noise:  -1.12431135035235
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.477255972347176
+[1] in noise
+[1] Noise:  0.279949940025015
+[1] in Bi
+[1] Chunk: martin
+[1] Base level:  0.477255972347176
+[1] in noise
+[1] Noise:  0.291145004309837
+[1] in Bi
+[1] Chunk: sarah
+[1] Base level:  0.477255972347176
+[1] in noise
+[1] Noise:  -0.416455227250287
+[1] in Bi
+[1] Chunk: ip
+[1] Base level:  0.627633049356743
+[1] in noise
+[1] Noise:  1.38625088838662
+[1] 
+[1]                  Partial Match
+[1] in compute.partial.match
+[1] similarity between IP and DP in chunk knopf is -1
+[1] similarity between IP and DP in chunk flasche is -1
+[1] similarity between IP and DP in chunk martin is -1
+[1] similarity between IP and DP in chunk sarah is -1
+[1] similarity between IP and IP in chunk ip is 0
+[1] in retrieve
+[1] ---- In add.time ----
+[1] Updated Time: 0.43668466900221
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.475072863434639
+[1] in Noise 2: -0.474596060354527
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.475072863434639
+[1] in Noise 2: -0.149380326774433
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  0.43668466900221
+[1] "1"      "2"      "RetLat" "437"    "5e-04"  "0.3257"
+[1] Retrieving ip at:  0.43668466900221  Activation: 3.16731034746339
+[1] ---- In add.time ----
+[1] Updated Time: 0.48668466900221
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.414271962791114
+[1] in Noise 2: -0.359150508491373
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.414271962791114
+[1] in Noise 2: -0.23502523238366
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  0.48668466900221
+[1] "1"      "2"      "Att"    "487"    "0.0551" "0.1792"
+[1] Production fired: Attach-klicke_auf
+[1] ------- creation --------
+[1] adding chunk:
+[1]  type   cat    name   spec   ctime  npres
+[1]  syn-obj           VP                klicke_auf        t_s             
+[5]  0.48668466900221  1               
+[1] 
+[1] 
+[1] ===============   Stage  3 : possPro   ===============
+[1] ---- In add.time ----
+[1] Updated Time: 0.53668466900221
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.360069431265793
+[1] in Noise 2: 0.77656587737013
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.360069431265793
+[1] in Noise 2: 0.0848425470841868
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  0.53668466900221
+[1] "1"      "3"      "FndL"   "537"    "1.1366" "0.4449"
+[1] Production fired: Find-Location-Of-Next-Word
+[1] ---- In add.time ----
+[1] Updated Time: 0.58668466900221
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.311172282754867
+[1] in Noise 2: -0.202492674510192
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.311172282754867
+[1] in Noise 2: -0.157584088079859
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  0.58668466900221
+[1] "1"      "3"      "ATNW"   "587"    "0.1087" "0.1536"
+[1] Production fired: Attend-To-Next-Word
+[1] ---- In add.time ----
+[1] Updated Time: 0.67168466900221
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.237661138905556
+[1] in Noise 2: 1.60798748607573
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.237661138905556
+[1] in Noise 2: -0.0378839932018116
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  0.67168466900221
+[1] "1"      "3"      "VisEn"  "672"    "1.8456" "0.1998"
+[1] Visual encoding done
+[1] ---- In add.time ----
+[1] Updated Time: 0.72168466900221
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.198983145571982
+[1] in Noise 2: -0.383773948829664
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.198983145571982
+[1] in Noise 2: 0.15650748047745
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  0.72168466900221
+[1] "1"       "3"       "LexRt"   "722"     "-0.1848" "0.3555" 
+[1] Production fired:Lexical-Retrieval-Request-possPro
+[1] in conflict.resolution
+[1] in noise
+[1] Noise:  0
+[1] Production:  possPro Utility:  Utility+Noise:  0 0
+[1] Production selected: possPro
+[1] ---- In add.time ----
+[1] Updated Time: 0.77168466900221
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.163083491012596
+[1] in Noise 2: -0.75218698747333
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.163083491012596
+[1] in Noise 2: -1.05027729578163
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  0.77168466900221
+[1] "1"       "3"       "SetRC"   "772"     "-0.5891" "-0.8872"
+[1] Production fired: Set-Retrieval-Cues-possPro
+[1] ------- retrieval --------
+[1] in retrieval.request
+[1] in list.cues
+[1] cue 1 : type = syn-obj
+[1] cue 2 : cat = VP
+[1] in build.retQ
+     [,1] [,2]    [,3]
+[1,] type syn-obj 1   
+[2,] cat  VP      2   
+[1] 
+[1]                  Activation Spreading
+[1] in compute.act.spreading
+[1] spreading act 1.15342640972003 (W = 0.5 , Sij = 2.30685281944005 ) from VP to chunk klicke_auf
+[1] "klicke_auf"
+[1] "[OLD] spread.act = 1.15342640972003"
+[1] in compute.base.act
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.163083491012596
+[1] in noise
+[1] Noise:  -0.126662751190589
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.163083491012596
+[1] in noise
+[1] Noise:  0.267097279755739
+[1] in Bi
+[1] Chunk: martin
+[1] Base level:  0.163083491012596
+[1] in noise
+[1] Noise:  0.0950486853949779
+[1] in Bi
+[1] Chunk: sarah
+[1] Base level:  0.163083491012596
+[1] in noise
+[1] Noise:  -0.127732935079042
+[1] in Bi
+[1] Chunk: ip
+[1] Base level:  1.09728347306182
+[1] in noise
+[1] Noise:  -0.129454922712917
+[1] in Bi
+[1] Chunk: klicke_auf
+[1] Base level:  0.627633049356743
+[1] in noise
+[1] Noise:  -0.085206096041325
+[1] 
+[1]                  Partial Match
+[1] in compute.partial.match
+[1] similarity between VP and DP in chunk knopf is -1
+[1] similarity between VP and DP in chunk flasche is -1
+[1] similarity between VP and DP in chunk martin is -1
+[1] similarity between VP and DP in chunk sarah is -1
+[1] similarity between VP and IP in chunk ip is -1
+[1] similarity between VP and VP in chunk klicke_auf is 0
+[1] in retrieve
+[1] ---- In add.time ----
+[1] Updated Time: 0.779022373764787
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.158025428204533
+[1] in Noise 2: 0.387544145700296
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.158025428204533
+[1] in Noise 2: -0.690325660356158
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  0.779022373764787
+[1] "1"       "3"       "RetLat"  "779"     "0.5456"  "-0.5323"
+[1] Retrieving klicke_auf at:  0.779022373764787  Activation: 1.69585336303545
+[1] ---- In add.time ----
+[1] Updated Time: 0.829022373764787
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.124857756194017
+[1] in Noise 2: 0.428251497335344
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.124857756194017
+[1] in Noise 2: 0.25100203484108
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  0.829022373764787
+[1] "1"      "3"      "Att"    "829"    "0.5531" "0.3759"
+[1] Production fired: Attach-possPro
+[1] ------- creation --------
+[1] adding chunk:
+[1]  type   name   cat    gend   case   ctime  npres
+[1]  syn-obj            empty-np           NP-empty         
+[4]  masc.PRED          acc.PRED           0.829022373764787
+[7]  1                
+[1] 
+[1] adding chunk:
+[1]  type   name   cat    head   gend   case   ctime  npres
+[1]  syn-obj            empty-dp           DP-empty         
+[4]  seinen             masc.PRED          acc.PRED         
+[7]  0.829022373764787  1                
+[1] 
+[1] 
+[1] ===============   Stage  4 : possPro.antc   ===============
+[1] in conflict.resolution
+[1] in noise
+[1] Noise:  0
+[1] Production:  possPro.antc Utility:  Utility+Noise:  0 0
+[1] Production selected: possPro.antc
+[1] ---- In add.time ----
+[1] Updated Time: 0.879022373764787
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.0937540676756096
+[1] in Noise 2: -0.0539206503695556
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.0937540676756096
+[1] in Noise 2: -0.0138146260921906
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  0.879022373764787
+[1] "1"      "4"      "SetRC"  "879"    "0.0398" "0.0799"
+[1] Production fired: Set-Retrieval-Cues-possPro.antc
+[1] ------- retrieval --------
+[1] in retrieval.request
+[1] in list.cues
+[1] cue 1 : type = syn-obj
+[1] cue 2 : cat = DP
+[1] cue 3 : gend = fem
+[1] cue 4 : animacy = ani
+[1] in build.retQ
+     [,1]    [,2]    [,3]
+[1,] type    syn-obj 1   
+[2,] cat     DP      5   
+[3,] gend    fem     3   
+[4,] animacy ani     3   
+[1] 
+[1]                  Activation Spreading
+[1] in compute.act.spreading
+[1] spreading act 0.347640521891475 (W = 0.25 , Sij = 1.3905620875659 ) from DP to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 0.347640521891475"
+[1] spreading act 0.347640521891475 (W = 0.25 , Sij = 1.3905620875659 ) from DP to chunk flasche
+[1] "flasche"
+[1] "[OLD] spread.act = 0.347640521891475"
+[1] spreading act 0.475346927832973 (W = 0.25 , Sij = 1.90138771133189 ) from fem to chunk flasche
+[1] "flasche"
+[1] "[OLD] spread.act = 0.822987449724447"
+[1] spreading act 0.347640521891475 (W = 0.25 , Sij = 1.3905620875659 ) from DP to chunk martin
+[1] "martin"
+[1] "[OLD] spread.act = 0.347640521891475"
+[1] spreading act 0.475346927832973 (W = 0.25 , Sij = 1.90138771133189 ) from ani to chunk martin
+[1] "martin"
+[1] "[OLD] spread.act = 0.822987449724447"
+[1] spreading act 0.347640521891475 (W = 0.25 , Sij = 1.3905620875659 ) from DP to chunk sarah
+[1] "sarah"
+[1] "[OLD] spread.act = 0.347640521891475"
+[1] spreading act 0.475346927832973 (W = 0.25 , Sij = 1.90138771133189 ) from fem to chunk sarah
+[1] "sarah"
+[1] "[OLD] spread.act = 0.822987449724447"
+[1] spreading act 0.475346927832973 (W = 0.25 , Sij = 1.90138771133189 ) from ani to chunk sarah
+[1] "sarah"
+[1] "[OLD] spread.act = 1.29833437755742"
+[1] in compute.base.act
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.0937540676756096
+[1] in noise
+[1] Noise:  0.215561459180702
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.0937540676756096
+[1] in noise
+[1] Noise:  -0.0665523893612049
+[1] in Bi
+[1] Chunk: martin
+[1] Base level:  0.0937540676756096
+[1] in noise
+[1] Noise:  0.0745461799612684
+[1] in Bi
+[1] Chunk: sarah
+[1] Base level:  0.0937540676756096
+[1] in noise
+[1] Noise:  0.292490139143027
+[1] in Bi
+[1] Chunk: ip
+[1] Base level:  0.983861072892873
+[1] in noise
+[1] Noise:  0.0464302395591811
+[1] in Bi
+[1] Chunk: klicke_auf
+[1] Base level:  1.55999165506781
+[1] in noise
+[1] Noise:  0.567447838578689
+[1] in Bi
+[1] Chunk: empty-np
+[1] Base level:  1.497866136777
+[1] in noise
+[1] Noise:  -0.197146297616421
+[1] in Bi
+[1] Chunk: empty-dp
+[1] Base level:  1.497866136777
+[1] in noise
+[1] Noise:  -0.867626638214333
+[1] 
+[1]                  Partial Match
+[1] in compute.partial.match
+[1] similarity between DP and DP in chunk knopf is 0
+[1] similarity between fem and masc in chunk knopf is -1
+[1] similarity between ani and inani in chunk knopf is -1
+[1] similarity between DP and DP in chunk flasche is 0
+[1] similarity between fem and fem in chunk flasche is 0
+[1] similarity between ani and inani in chunk flasche is -1
+[1] similarity between DP and DP in chunk martin is 0
+[1] similarity between fem and masc in chunk martin is -1
+[1] similarity between ani and ani in chunk martin is 0
+[1] similarity between DP and DP in chunk sarah is 0
+[1] similarity between fem and fem in chunk sarah is 0
+[1] similarity between ani and ani in chunk sarah is 0
+[1] similarity between DP and IP in chunk ip is -1
+[1] similarity between DP and VP in chunk klicke_auf is -1
+[1] similarity between DP and NP-empty in chunk empty-np is -1
+[1] similarity between fem and masc.PRED in chunk empty-np is -1
+[1] similarity between DP and DP-empty in chunk empty-dp is -1
+[1] similarity between fem and masc.PRED in chunk empty-dp is -1
+[1] in retrieve
+[1] ---- In add.time ----
+[1] Updated Time: 0.886443277669024
+[1] in get.activation
+[1] spreading act 0.347640521891475 (W = 0.25 , Sij = 1.3905620875659 ) from DP to chunk knopf
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.0892982849884532
+[1] in Noise 2: -1.16659340792026
+[1] "knopf"
+[1] "[NEW] spread.act = 0.347640521891475"
+[1] in get.activation
+[1] spreading act 0.347640521891475 (W = 0.25 , Sij = 1.3905620875659 ) from DP to chunk flasche
+[1] spreading act 0.822987449724447 (W = 0.25 , Sij = 1.90138771133189 ) from fem to chunk flasche
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.0892982849884532
+[1] in Noise 2: -0.293243976907538
+[1] "flasche"
+[1] "[NEW] spread.act = 0.822987449724447"
+[1] 
+[1] Time:  0.886443277669024
+[1] "1"       "4"       "RetLat"  "886"     "-0.7297" "0.619"  
+[1] Retrieving sarah at:  0.886443277669024  Activation: 1.68457858437606
+[1] ---- In add.time ----
+[1] Updated Time: 0.936443277669024
+[1] in get.activation
+[1] spreading act 0.347640521891475 (W = 0.25 , Sij = 1.3905620875659 ) from DP to chunk knopf
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.0602690700479421
+[1] in Noise 2: -0.0356423154801698
+[1] "knopf"
+[1] "[NEW] spread.act = 0.347640521891475"
+[1] in get.activation
+[1] spreading act 0.347640521891475 (W = 0.25 , Sij = 1.3905620875659 ) from DP to chunk flasche
+[1] spreading act 0.822987449724447 (W = 0.25 , Sij = 1.90138771133189 ) from fem to chunk flasche
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.0602690700479421
+[1] in Noise 2: -0.924113604843758
+[1] "flasche"
+[1] "[NEW] spread.act = 0.822987449724447"
+[1] 
+[1] Time:  0.936443277669024
+[1] "1"       "4"       "Att"     "936"     "0.3723"  "-0.0409"
+[1] Production fired: Attach-possPro.antc
+[1] 
+[1] ===============   Stage  5 : p.match.possPro   ===============
+[1] in conflict.resolution
+[1] in noise
+[1] Noise:  0
+[1] Production:  p.match.possPro Utility:  Utility+Noise:  0 0
+[1] Production selected: p.match.possPro
+[1] ---- In add.time ----
+[1] Updated Time: 0.986443277669024
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.0328331636791818
+[1] in Noise 2: -1.54319742450598
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.0328331636791818
+[1] in Noise 2: 0.113953073256093
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  0.986443277669024
+[1] "1"       "5"       "SetRC"   "986"     "-1.5104" "0.1468" 
+[1] Production fired: Set-Retrieval-Cues-p.match.possPro
+[1] ------- retrieval --------
+[1] in retrieval.request
+[1] in list.cues
+[1] cue 1 : type = syn-obj
+[1] cue 2 : cat = DP
+[1] cue 3 : gend = masc
+[1] cue 4 : animacy = inani
+[1] cue 5 : ref = pic
+[1] in build.retQ
+     [,1]    [,2]    [,3]
+[1,] type    syn-obj 1   
+[2,] cat     DP      5   
+[3,] gend    masc    3   
+[4,] animacy inani   3   
+[5,] ref     pic     4   
+[1] 
+[1]                  Activation Spreading
+[1] in compute.act.spreading
+[1] spreading act 0.27811241751318 (W = 0.2 , Sij = 1.3905620875659 ) from DP to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 0.27811241751318"
+[1] spreading act 0.380277542266378 (W = 0.2 , Sij = 1.90138771133189 ) from masc to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 0.658389959779558"
+[1] spreading act 0.380277542266378 (W = 0.2 , Sij = 1.90138771133189 ) from inani to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 1.03866750204594"
+[1] spreading act 0.322741127776022 (W = 0.2 , Sij = 1.61370563888011 ) from pic to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 1.36140862982196"
+[1] spreading act 0.27811241751318 (W = 0.2 , Sij = 1.3905620875659 ) from DP to chunk flasche
+[1] "flasche"
+[1] "[OLD] spread.act = 0.27811241751318"
+[1] spreading act 0.380277542266378 (W = 0.2 , Sij = 1.90138771133189 ) from inani to chunk flasche
+[1] "flasche"
+[1] "[OLD] spread.act = 0.658389959779558"
+[1] spreading act 0.322741127776022 (W = 0.2 , Sij = 1.61370563888011 ) from pic to chunk flasche
+[1] "flasche"
+[1] "[OLD] spread.act = 0.98113108755558"
+[1] spreading act 0.27811241751318 (W = 0.2 , Sij = 1.3905620875659 ) from DP to chunk martin
+[1] "martin"
+[1] "[OLD] spread.act = 0.27811241751318"
+[1] spreading act 0.380277542266378 (W = 0.2 , Sij = 1.90138771133189 ) from masc to chunk martin
+[1] "martin"
+[1] "[OLD] spread.act = 0.658389959779558"
+[1] spreading act 0.27811241751318 (W = 0.2 , Sij = 1.3905620875659 ) from DP to chunk sarah
+[1] "sarah"
+[1] "[OLD] spread.act = 0.27811241751318"
+[1] in compute.base.act
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.0328331636791818
+[1] in noise
+[1] Noise:  -0.610001079622684
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.0328331636791818
+[1] in noise
+[1] Noise:  -0.0881540165684832
+[1] in Bi
+[1] Chunk: martin
+[1] Base level:  0.0328331636791818
+[1] in noise
+[1] Noise:  -0.222087345413471
+[1] in Bi
+[1] Chunk: sarah
+[1] Base level:  1.43404965190292
+[1] in noise
+[1] Noise:  -0.247494145809697
+[1] in Bi
+[1] Chunk: ip
+[1] Base level:  0.892859339877158
+[1] in noise
+[1] Noise:  -0.488402808913178
+[1] in Bi
+[1] Chunk: klicke_auf
+[1] Base level:  1.28377945685981
+[1] in noise
+[1] Noise:  -0.428739880300526
+[1] in Bi
+[1] Chunk: empty-np
+[1] Base level:  0.924416072146614
+[1] in noise
+[1] Noise:  0.0851883343874504
+[1] in Bi
+[1] Chunk: empty-dp
+[1] Base level:  0.924416072146614
+[1] in noise
+[1] Noise:  0.198729118825441
+[1] 
+[1]                  Partial Match
+[1] in compute.partial.match
+[1] similarity between DP and DP in chunk knopf is 0
+[1] similarity between masc and masc in chunk knopf is 0
+[1] similarity between inani and inani in chunk knopf is 0
+[1] similarity between pic and pic in chunk knopf is 0
+[1] similarity between DP and DP in chunk flasche is 0
+[1] similarity between masc and fem in chunk flasche is -1
+[1] similarity between inani and inani in chunk flasche is 0
+[1] similarity between pic and pic in chunk flasche is 0
+[1] similarity between DP and DP in chunk martin is 0
+[1] similarity between masc and masc in chunk martin is 0
+[1] similarity between inani and ani in chunk martin is -1
+[1] similarity between DP and DP in chunk sarah is 0
+[1] similarity between masc and fem in chunk sarah is -1
+[1] similarity between inani and ani in chunk sarah is -1
+[1] similarity between DP and IP in chunk ip is -1
+[1] similarity between DP and VP in chunk klicke_auf is -1
+[1] similarity between DP and NP-empty in chunk empty-np is -1
+[1] similarity between masc and masc.PRED in chunk empty-np is -1
+[1] similarity between DP and DP-empty in chunk empty-dp is -1
+[1] similarity between masc and masc.PRED in chunk empty-dp is -1
+[1] in retrieve
+[1] ---- In add.time ----
+[1] Updated Time: 1.00470192401535
+[1] in get.activation
+[1] spreading act 0.27811241751318 (W = 0.2 , Sij = 1.3905620875659 ) from DP to chunk knopf
+[1] spreading act 0.658389959779558 (W = 0.2 , Sij = 1.90138771133189 ) from masc to chunk knopf
+[1] spreading act 1.03866750204594 (W = 0.2 , Sij = 1.90138771133189 ) from inani to chunk knopf
+[1] spreading act 1.36140862982196 (W = 0.2 , Sij = 1.61370563888011 ) from pic to chunk knopf
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.0231780543356672
+[1] in Noise 2: -0.432470702907859
+[1] "knopf"
+[1] "[NEW] spread.act = 1.36140862982196"
+[1] in get.activation
+[1] spreading act 0.27811241751318 (W = 0.2 , Sij = 1.3905620875659 ) from DP to chunk flasche
+[1] spreading act 0.658389959779558 (W = 0.2 , Sij = 1.90138771133189 ) from inani to chunk flasche
+[1] spreading act 0.98113108755558 (W = 0.2 , Sij = 1.61370563888011 ) from pic to chunk flasche
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  0.0231780543356672
+[1] in Noise 2: 0.0853723399520799
+[1] "flasche"
+[1] "[NEW] spread.act = 0.98113108755558"
+[1] 
+[1] Time:  1.00470192401535
+[1] "1"      "5"      "RetLat" "1005"   "0.9521" "1.0897"
+[1] Retrieving knopf at:  1.00470192401535  Activation: 0.784240713878456
+[1] ---- In add.time ----
+[1] Updated Time: 1.05470192401536
+[1] in get.activation
+[1] spreading act 0.27811241751318 (W = 0.2 , Sij = 1.3905620875659 ) from DP to chunk knopf
+[1] spreading act 0.658389959779558 (W = 0.2 , Sij = 1.90138771133189 ) from masc to chunk knopf
+[1] spreading act 1.03866750204594 (W = 0.2 , Sij = 1.90138771133189 ) from inani to chunk knopf
+[1] spreading act 1.36140862982196 (W = 0.2 , Sij = 1.61370563888011 ) from pic to chunk knopf
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  1.69924081885924
+[1] in Noise 2: -0.162816944780338
+[1] "knopf"
+[1] "[NEW] spread.act = 1.36140862982196"
+[1] in get.activation
+[1] spreading act 0.27811241751318 (W = 0.2 , Sij = 1.3905620875659 ) from DP to chunk flasche
+[1] spreading act 0.658389959779558 (W = 0.2 , Sij = 1.90138771133189 ) from inani to chunk flasche
+[1] spreading act 0.98113108755558 (W = 0.2 , Sij = 1.61370563888011 ) from pic to chunk flasche
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.00234545224954168
+[1] in Noise 2: 0.706190762190468
+[1] "flasche"
+[1] "[NEW] spread.act = 0.98113108755558"
+[1] 
+[1] Time:  1.05470192401536
+[1] "1"      "5"      "Att"    "1055"   "2.8978" "1.685" 
+[1] Production fired: Attach-p.match.possPro
+[1] 
+[1] ===============   Stage  6 : blauen   ===============
+[1] ---- In add.time ----
+[1] Updated Time: 1.10470192401536
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  1.41972913550104
+[1] in Noise 2: 0.337318330851903
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.0266290952643715
+[1] in Noise 2: 0.982354328532336
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  1.10470192401536
+[1] "1"      "6"      "FndL"   "1105"   "1.757"  "0.9557"
+[1] Production fired: Find-Location-Of-Next-Word
+[1] ---- In add.time ----
+[1] Updated Time: 1.15470192401536
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  1.26226630262796
+[1] in Noise 2: 0.365019936876441
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.049787773278896
+[1] in Noise 2: -0.107775120854652
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  1.15470192401536
+[1] "1"       "6"       "ATNW"    "1155"    "1.6273"  "-0.1576"
+[1] Production fired: Attend-To-Next-Word
+[1] ---- In add.time ----
+[1] Updated Time: 1.23970192401536
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  1.09180779729719
+[1] in Noise 2: -0.081122443497666
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.086851395863183
+[1] in Noise 2: 0.424683557452142
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  1.23970192401536
+[1] "1"      "6"      "VisEn"  "1240"   "1.0107" "0.3378"
+[1] Visual encoding done
+[1] ---- In add.time ----
+[1] Updated Time: 1.28970192401536
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  1.01931872109384
+[1] in Noise 2: 0.202388347876306
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.107435483430765
+[1] in Noise 2: 0.45937901995039
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  1.28970192401536
+[1] "1"      "6"      "LexRt"  "1290"   "1.2217" "0.3519"
+[1] Production fired:Lexical-Retrieval-Request-blauen
+[1] in conflict.resolution
+[1] in noise
+[1] Noise:  0
+[1] Production:  blauen Utility:  Utility+Noise:  0 0
+[1] Production selected: blauen
+[1] ---- In add.time ----
+[1] Updated Time: 1.33970192401536
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.958694641179637
+[1] in Noise 2: 0.0222434121400559
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.127205562509402
+[1] in Noise 2: -0.290933574781531
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  1.33970192401536
+[1] "1"       "6"       "SetRC"   "1340"    "0.9809"  "-0.4181"
+[1] Production fired: Set-Retrieval-Cues-blauen
+[1] ------- retrieval --------
+[1] in retrieval.request
+[1] in list.cues
+[1] cue 1 : type = syn-obj
+[1] cue 2 : cat = NP-empty
+[1] cue 3 : gend = masc.PRED
+[1] cue 4 : case = acc.PRED
+[1] in build.retQ
+     [,1] [,2]      [,3]
+[1,] type syn-obj   1   
+[2,] cat  NP-empty  2   
+[3,] gend masc.PRED 3   
+[4,] case acc.PRED  3   
+[1] 
+[1]                  Activation Spreading
+[1] in compute.act.spreading
+[1] spreading act 0.576713204860014 (W = 0.25 , Sij = 2.30685281944005 ) from NP-empty to chunk empty-np
+[1] "empty-np"
+[1] "[OLD] spread.act = 0.576713204860014"
+[1] spreading act 0.475346927832973 (W = 0.25 , Sij = 1.90138771133189 ) from masc.PRED to chunk empty-np
+[1] "empty-np"
+[1] "[OLD] spread.act = 1.05206013269299"
+[1] spreading act 0.475346927832973 (W = 0.25 , Sij = 1.90138771133189 ) from acc.PRED to chunk empty-np
+[1] "empty-np"
+[1] "[OLD] spread.act = 1.52740706052596"
+[1] spreading act 0.475346927832973 (W = 0.25 , Sij = 1.90138771133189 ) from masc.PRED to chunk empty-dp
+[1] "empty-dp"
+[1] "[OLD] spread.act = 0.475346927832973"
+[1] spreading act 0.475346927832973 (W = 0.25 , Sij = 1.90138771133189 ) from acc.PRED to chunk empty-dp
+[1] "empty-dp"
+[1] "[OLD] spread.act = 0.950693855665945"
+[1] in compute.base.act
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.958694641179637
+[1] in noise
+[1] Noise:  -0.898499420440971
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.127205562509402
+[1] in noise
+[1] Noise:  0.504706971682976
+[1] in Bi
+[1] Chunk: martin
+[1] Base level:  -0.127205562509402
+[1] in noise
+[1] Noise:  0.00460013850546917
+[1] in Bi
+[1] Chunk: sarah
+[1] Base level:  0.861156944053001
+[1] in noise
+[1] Noise:  0.718455179107179
+[1] in Bi
+[1] Chunk: ip
+[1] Base level:  0.677598618702004
+[1] in noise
+[1] Noise:  -0.0127482548013609
+[1] in Bi
+[1] Chunk: klicke_auf
+[1] Base level:  0.883035227551895
+[1] in noise
+[1] Noise:  -0.533606549900877
+[1] in Bi
+[1] Chunk: empty-np
+[1] Base level:  0.336006494358878
+[1] in noise
+[1] Noise:  0.0116485742524877
+[1] in Bi
+[1] Chunk: empty-dp
+[1] Base level:  0.336006494358878
+[1] in noise
+[1] Noise:  0.460595596025298
+[1] 
+[1]                  Partial Match
+[1] in compute.partial.match
+[1] similarity between NP-empty and DP in chunk knopf is -1
+[1] similarity between masc.PRED and masc in chunk knopf is -1
+[1] similarity between NP-empty and DP in chunk flasche is -1
+[1] similarity between masc.PRED and fem in chunk flasche is -1
+[1] similarity between NP-empty and DP in chunk martin is -1
+[1] similarity between masc.PRED and masc in chunk martin is -1
+[1] similarity between NP-empty and DP in chunk sarah is -1
+[1] similarity between masc.PRED and fem in chunk sarah is -1
+[1] similarity between NP-empty and IP in chunk ip is -1
+[1] similarity between NP-empty and VP in chunk klicke_auf is -1
+[1] similarity between NP-empty and NP-empty in chunk empty-np is 0
+[1] similarity between masc.PRED and masc.PRED in chunk empty-np is 0
+[1] similarity between acc.PRED and acc.PRED in chunk empty-np is 0
+[1] similarity between NP-empty and DP-empty in chunk empty-dp is -1
+[1] similarity between masc.PRED and masc.PRED in chunk empty-dp is 0
+[1] similarity between acc.PRED and acc.PRED in chunk empty-dp is 0
+[1] in retrieve
+[1] ---- In add.time ----
+[1] Updated Time: 1.34583574158852
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.951889348892382
+[1] in Noise 2: -0.00380671045081421
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.129577923648055
+[1] in Noise 2: 1.06395500948825
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  1.34583574158852
+[1] "1"      "6"      "RetLat" "1346"   "0.9481" "0.9344"
+[1] Retrieving empty-np at:  1.34583574158852  Activation: 1.87506212913732
+[1] ---- In add.time ----
+[1] Updated Time: 1.39583574158852
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.900548437265701
+[1] in Noise 2: -0.54737441627078
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.148507594647341
+[1] in Noise 2: 0.368226810278135
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  1.39583574158852
+[1] "1"      "6"      "Att"    "1396"   "0.3532" "0.2197"
+[1] Production fired: Attach-blauen
+[1] ------- creation --------
+[1] adding chunk:
+[1]  type   cat    name   gend   case   ctime  npres
+[1]  syn-obj           AdjP              blauen            masc            
+[5]  acc               1.39583574158852  1               
+[1] 
+[1] 
+[1] ===============   Stage  7 : p.match.blauen   ===============
+[1] in conflict.resolution
+[1] in noise
+[1] Noise:  0
+[1] Production:  p.match.blauen Utility:  Utility+Noise:  0 0
+[1] Production selected: p.match.blauen
+[1] ---- In add.time ----
+[1] Updated Time: 1.44583574158852
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.855279676944206
+[1] in Noise 2: 0.0363131580731408
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.166746666899368
+[1] in Noise 2: -0.157713665769139
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  1.44583574158852
+[1] "1"       "7"       "SetRC"   "1446"    "0.8916"  "-0.3245"
+[1] Production fired: Set-Retrieval-Cues-p.match.blauen
+[1] ------- retrieval --------
+[1] in retrieval.request
+[1] in list.cues
+[1] cue 1 : type = syn-obj
+[1] cue 2 : cat = DP
+[1] cue 3 : gend = masc
+[1] cue 4 : animacy = inani
+[1] cue 5 : ref = pic
+[1] cue 6 : col = blau
+[1] in build.retQ
+     [,1]    [,2]    [,3]
+[1,] type    syn-obj 1   
+[2,] cat     DP      5   
+[3,] gend    masc    4   
+[4,] animacy inani   3   
+[5,] ref     pic     4   
+[6,] col     blau    3   
+[1] 
+[1]                  Activation Spreading
+[1] in compute.act.spreading
+[1] spreading act 0.23176034792765 (W = 0.166666666666667 , Sij = 1.3905620875659 ) from DP to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 0.23176034792765"
+[1] spreading act 0.268950939813352 (W = 0.166666666666667 , Sij = 1.61370563888011 ) from masc to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 0.500711287741001"
+[1] spreading act 0.316897951888648 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from inani to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 0.81760923962965"
+[1] spreading act 0.268950939813352 (W = 0.166666666666667 , Sij = 1.61370563888011 ) from pic to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 1.086560179443"
+[1] spreading act 1.81689795188865 (W = 0.166666666666667 , Sij = 10.9013877113319 ) from blau to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 2.90345813133165"
+[1] spreading act 0.23176034792765 (W = 0.166666666666667 , Sij = 1.3905620875659 ) from DP to chunk flasche
+[1] "flasche"
+[1] "[OLD] spread.act = 0.23176034792765"
+[1] spreading act 0.316897951888648 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from inani to chunk flasche
+[1] "flasche"
+[1] "[OLD] spread.act = 0.548658299816298"
+[1] spreading act 0.268950939813352 (W = 0.166666666666667 , Sij = 1.61370563888011 ) from pic to chunk flasche
+[1] "flasche"
+[1] "[OLD] spread.act = 0.81760923962965"
+[1] spreading act 1.81689795188865 (W = 0.166666666666667 , Sij = 10.9013877113319 ) from blau to chunk flasche
+[1] "flasche"
+[1] "[OLD] spread.act = 2.6345071915183"
+[1] spreading act 0.23176034792765 (W = 0.166666666666667 , Sij = 1.3905620875659 ) from DP to chunk martin
+[1] "martin"
+[1] "[OLD] spread.act = 0.23176034792765"
+[1] spreading act 0.268950939813352 (W = 0.166666666666667 , Sij = 1.61370563888011 ) from masc to chunk martin
+[1] "martin"
+[1] "[OLD] spread.act = 0.500711287741001"
+[1] spreading act 0.23176034792765 (W = 0.166666666666667 , Sij = 1.3905620875659 ) from DP to chunk sarah
+[1] "sarah"
+[1] "[OLD] spread.act = 0.23176034792765"
+[1] spreading act 0.268950939813352 (W = 0.166666666666667 , Sij = 1.61370563888011 ) from masc to chunk blauen
+[1] "blauen"
+[1] "[OLD] spread.act = 0.268950939813352"
+[1] in compute.base.act
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.855279676944206
+[1] in noise
+[1] Noise:  0.0256644875690382
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.166746666899368
+[1] in noise
+[1] Noise:  -0.519457053703864
+[1] in Bi
+[1] Chunk: martin
+[1] Base level:  -0.166746666899368
+[1] in noise
+[1] Noise:  -0.622090412369393
+[1] in Bi
+[1] Chunk: sarah
+[1] Base level:  0.780904215509606
+[1] in noise
+[1] Noise:  0.539963380240837
+[1] in Bi
+[1] Chunk: ip
+[1] Base level:  0.628033433687739
+[1] in noise
+[1] Noise:  -0.141358781012063
+[1] in Bi
+[1] Chunk: klicke_auf
+[1] Base level:  0.809009453988162
+[1] in noise
+[1] Noise:  0.154485672097989
+[1] in Bi
+[1] Chunk: empty-np
+[1] Base level:  1.48965281574811
+[1] in noise
+[1] Noise:  -0.26508568446816
+[1] in Bi
+[1] Chunk: empty-dp
+[1] Base level:  0.241594392050948
+[1] in noise
+[1] Noise:  -0.0842302128949724
+[1] in Bi
+[1] Chunk: blauen
+[1] Base level:  1.497866136777
+[1] in noise
+[1] Noise:  0.370945990714417
+[1] 
+[1]                  Partial Match
+[1] in compute.partial.match
+[1] similarity between DP and DP in chunk knopf is 0
+[1] similarity between masc and masc in chunk knopf is 0
+[1] similarity between inani and inani in chunk knopf is 0
+[1] similarity between pic and pic in chunk knopf is 0
+[1] similarity between blau and blau in chunk knopf is 0
+[1] similarity between DP and DP in chunk flasche is 0
+[1] similarity between masc and fem in chunk flasche is -1
+[1] similarity between inani and inani in chunk flasche is 0
+[1] similarity between pic and pic in chunk flasche is 0
+[1] similarity between blau and blau in chunk flasche is 0
+[1] similarity between DP and DP in chunk martin is 0
+[1] similarity between masc and masc in chunk martin is 0
+[1] similarity between inani and ani in chunk martin is -1
+[1] similarity between DP and DP in chunk sarah is 0
+[1] similarity between masc and fem in chunk sarah is -1
+[1] similarity between inani and ani in chunk sarah is -1
+[1] similarity between DP and IP in chunk ip is -1
+[1] similarity between DP and VP in chunk klicke_auf is -1
+[1] similarity between DP and NP-empty in chunk empty-np is -1
+[1] similarity between masc and masc.PRED in chunk empty-np is -1
+[1] similarity between DP and DP-empty in chunk empty-dp is -1
+[1] similarity between masc and masc.PRED in chunk empty-dp is -1
+[1] similarity between DP and AdjP in chunk blauen is -1
+[1] similarity between masc and masc in chunk blauen is 0
+[1] in retrieve
+[1] ---- In add.time ----
+[1] Updated Time: 1.44674463918914
+[1] in get.activation
+[1] spreading act 0.23176034792765 (W = 0.166666666666667 , Sij = 1.3905620875659 ) from DP to chunk knopf
+[1] spreading act 0.500711287741001 (W = 0.166666666666667 , Sij = 1.61370563888011 ) from masc to chunk knopf
+[1] spreading act 0.81760923962965 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from inani to chunk knopf
+[1] spreading act 1.086560179443 (W = 0.166666666666667 , Sij = 1.61370563888011 ) from pic to chunk knopf
+[1] spreading act 1.40345813133165 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from blau to chunk knopf
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  0.854503831046538
+[1] in Noise 2: 1.22418372575193
+[1] "knopf"
+[1] "[NEW] spread.act = 1.40345813133165"
+[1] in get.activation
+[1] spreading act 0.23176034792765 (W = 0.166666666666667 , Sij = 1.3905620875659 ) from DP to chunk flasche
+[1] spreading act 0.548658299816298 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from inani to chunk flasche
+[1] spreading act 0.81760923962965 (W = 0.166666666666667 , Sij = 1.61370563888011 ) from pic to chunk flasche
+[1] spreading act 1.1345071915183 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from blau to chunk flasche
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.16707213564468
+[1] in Noise 2: 0.29862098366795
+[1] "flasche"
+[1] "[NEW] spread.act = 1.1345071915183"
+[1] 
+[1] Time:  1.44674463918914
+[1] "1"      "7"      "RetLat" "1447"   "3.4821" "1.2661"
+[1] Retrieving knopf at:  1.44674463918914  Activation: 3.78440229584489
+[1] ---- In add.time ----
+[1] Updated Time: 1.49674463918914
+[1] in get.activation
+[1] spreading act 0.23176034792765 (W = 0.166666666666667 , Sij = 1.3905620875659 ) from DP to chunk knopf
+[1] spreading act 0.500711287741001 (W = 0.166666666666667 , Sij = 1.61370563888011 ) from masc to chunk knopf
+[1] spreading act 0.81760923962965 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from inani to chunk knopf
+[1] spreading act 1.086560179443 (W = 0.166666666666667 , Sij = 1.61370563888011 ) from pic to chunk knopf
+[1] spreading act 1.40345813133165 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from blau to chunk knopf
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  1.90644549646839
+[1] in Noise 2: -0.107093096851026
+[1] "knopf"
+[1] "[NEW] spread.act = 1.40345813133165"
+[1] in get.activation
+[1] spreading act 0.23176034792765 (W = 0.166666666666667 , Sij = 1.3905620875659 ) from DP to chunk flasche
+[1] spreading act 0.548658299816298 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from inani to chunk flasche
+[1] spreading act 0.81760923962965 (W = 0.166666666666667 , Sij = 1.61370563888011 ) from pic to chunk flasche
+[1] spreading act 1.1345071915183 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from blau to chunk flasche
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.184657978024383
+[1] in Noise 2: -0.175293482617366
+[1] "flasche"
+[1] "[NEW] spread.act = 1.1345071915183"
+[1] 
+[1] Time:  1.49674463918914
+[1] "1"      "7"      "Att"    "1497"   "3.2028" "0.7746"
+[1] Production fired: Attach-p.match.blauen
+[1] 
+[1] ===============   Stage  8 : knopf   ===============
+[1] ---- In add.time ----
+[1] Updated Time: 1.54674463918914
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  1.67483657424128
+[1] in Noise 2: -0.654006816960439
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.201646254591399
+[1] in Noise 2: -0.317127550776542
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  1.54674463918914
+[1] "1"       "8"       "FndL"    "1547"    "1.0208"  "-0.5188"
+[1] Production fired: Find-Location-Of-Next-Word
+[1] ---- In add.time ----
+[1] Updated Time: 1.59674463918914
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  1.5445140919183
+[1] in Noise 2: -0.879648108504946
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.218076244784095
+[1] in Noise 2: -0.58892469223813
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  1.59674463918914
+[1] "1"      "8"      "ATNW"   "1597"   "0.6649" "-0.807"
+[1] Production fired: Attend-To-Next-Word
+[1] ---- In add.time ----
+[1] Updated Time: 1.68174463918914
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  1.40143116927044
+[1] in Noise 2: -0.289839751304086
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.244824886606977
+[1] in Noise 2: -0.907151483202195
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  1.68174463918914
+[1] "1"      "8"      "VisEn"  "1682"   "1.1116" "-1.152"
+[1] Visual encoding done
+[1] ---- In add.time ----
+[1] Updated Time: 1.73174463918914
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  1.33948507633821
+[1] in Noise 2: -0.028145413373596
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.259915865140055
+[1] in Noise 2: 0.916451322182426
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  1.73174463918914
+[1] "1"      "8"      "LexRt"  "1732"   "1.3113" "0.6565"
+[1] Production fired:Lexical-Retrieval-Request-knopf
+[1] in conflict.resolution
+[1] in noise
+[1] Noise:  0
+[1] Production:  knopf Utility:  Utility+Noise:  0 0
+[1] Production selected: knopf
+[1] ---- In add.time ----
+[1] Updated Time: 1.78174463918914
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  1.28704549561616
+[1] in Noise 2: 0.203585724609006
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.274564681156288
+[1] in Noise 2: -0.264551299177205
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  1.78174463918914
+[1] "1"       "8"       "SetRC"   "1782"    "1.4906"  "-0.5391"
+[1] Production fired: Set-Retrieval-Cues-knopf
+[1] ------- retrieval --------
+[1] in retrieval.request
+[1] in list.cues
+[1] cue 1 : type = syn-obj
+[1] cue 2 : cat = DP
+[1] cue 3 : gend = masc
+[1] cue 4 : animacy = inani
+[1] cue 5 : name = knopf
+[1] cue 6 : col = blau
+[1] in build.retQ
+     [,1]    [,2]    [,3]
+[1,] type    syn-obj 1   
+[2,] cat     DP      5   
+[3,] gend    masc    4   
+[4,] animacy inani   3   
+[5,] name    knopf   2   
+[6,] col     blau    3   
+[1] 
+[1]                  Activation Spreading
+[1] in compute.act.spreading
+[1] spreading act 0.23176034792765 (W = 0.166666666666667 , Sij = 1.3905620875659 ) from DP to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 0.23176034792765"
+[1] spreading act 0.268950939813352 (W = 0.166666666666667 , Sij = 1.61370563888011 ) from masc to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 0.500711287741001"
+[1] spreading act 0.316897951888648 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from inani to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 0.81760923962965"
+[1] spreading act 1.88447546990668 (W = 0.166666666666667 , Sij = 11.3068528194401 ) from knopf to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 2.70208470953633"
+[1] spreading act 1.81689795188865 (W = 0.166666666666667 , Sij = 10.9013877113319 ) from blau to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 4.51898266142497"
+[1] spreading act 0.23176034792765 (W = 0.166666666666667 , Sij = 1.3905620875659 ) from DP to chunk flasche
+[1] "flasche"
+[1] "[OLD] spread.act = 0.23176034792765"
+[1] spreading act 0.316897951888648 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from inani to chunk flasche
+[1] "flasche"
+[1] "[OLD] spread.act = 0.548658299816298"
+[1] spreading act 1.81689795188865 (W = 0.166666666666667 , Sij = 10.9013877113319 ) from blau to chunk flasche
+[1] "flasche"
+[1] "[OLD] spread.act = 2.36555625170495"
+[1] spreading act 0.23176034792765 (W = 0.166666666666667 , Sij = 1.3905620875659 ) from DP to chunk martin
+[1] "martin"
+[1] "[OLD] spread.act = 0.23176034792765"
+[1] spreading act 0.268950939813352 (W = 0.166666666666667 , Sij = 1.61370563888011 ) from masc to chunk martin
+[1] "martin"
+[1] "[OLD] spread.act = 0.500711287741001"
+[1] spreading act 0.23176034792765 (W = 0.166666666666667 , Sij = 1.3905620875659 ) from DP to chunk sarah
+[1] "sarah"
+[1] "[OLD] spread.act = 0.23176034792765"
+[1] spreading act 0.268950939813352 (W = 0.166666666666667 , Sij = 1.61370563888011 ) from masc to chunk blauen
+[1] "blauen"
+[1] "[OLD] spread.act = 0.268950939813352"
+[1] in compute.base.act
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  1.28704549561616
+[1] in noise
+[1] Noise:  -0.215300573425261
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.274564681156288
+[1] in noise
+[1] Noise:  0.468536860740913
+[1] in Bi
+[1] Chunk: martin
+[1] Base level:  -0.274564681156288
+[1] in noise
+[1] Noise:  0.757582341541651
+[1] in Bi
+[1] Chunk: sarah
+[1] Base level:  0.59705347343236
+[1] in noise
+[1] Noise:  0.163830043548606
+[1] in Bi
+[1] Chunk: ip
+[1] Base level:  0.497791213938191
+[1] in noise
+[1] Noise:  0.0926005638915728
+[1] in Bi
+[1] Chunk: klicke_auf
+[1] Base level:  0.629872310832487
+[1] in noise
+[1] Noise:  0.459846382096812
+[1] in Bi
+[1] Chunk: empty-np
+[1] Base level:  0.931819963364712
+[1] in noise
+[1] Noise:  1.73315603226552
+[1] in Bi
+[1] Chunk: empty-dp
+[1] Base level:  0.0242159248380827
+[1] in noise
+[1] Noise:  -0.77162807647518
+[1] in Bi
+[1] Chunk: blauen
+[1] Base level:  0.47607697697615
+[1] in noise
+[1] Noise:  0.293027626374483
+[1] 
+[1]                  Partial Match
+[1] in compute.partial.match
+[1] similarity between DP and DP in chunk knopf is 0
+[1] similarity between masc and masc in chunk knopf is 0
+[1] similarity between inani and inani in chunk knopf is 0
+[1] similarity between knopf and knopf in chunk knopf is 0
+[1] similarity between blau and blau in chunk knopf is 0
+[1] similarity between DP and DP in chunk flasche is 0
+[1] similarity between masc and fem in chunk flasche is -1
+[1] similarity between inani and inani in chunk flasche is 0
+[1] similarity between knopf and flasche in chunk flasche is -1
+[1] similarity between blau and blau in chunk flasche is 0
+[1] similarity between DP and DP in chunk martin is 0
+[1] similarity between masc and masc in chunk martin is 0
+[1] similarity between inani and ani in chunk martin is -1
+[1] similarity between knopf and martin in chunk martin is -1
+[1] similarity between DP and DP in chunk sarah is 0
+[1] similarity between masc and fem in chunk sarah is -1
+[1] similarity between inani and ani in chunk sarah is -1
+[1] similarity between knopf and sarah in chunk sarah is -1
+[1] similarity between DP and IP in chunk ip is -1
+[1] similarity between knopf and ip in chunk ip is -1
+[1] similarity between DP and VP in chunk klicke_auf is -1
+[1] similarity between knopf and klicke_auf in chunk klicke_auf is -1
+[1] similarity between DP and NP-empty in chunk empty-np is -1
+[1] similarity between masc and masc.PRED in chunk empty-np is -1
+[1] similarity between knopf and empty-np in chunk empty-np is -1
+[1] similarity between DP and DP-empty in chunk empty-dp is -1
+[1] similarity between masc and masc.PRED in chunk empty-dp is -1
+[1] similarity between knopf and empty-dp in chunk empty-dp is -1
+[1] similarity between DP and AdjP in chunk blauen is -1
+[1] similarity between masc and masc in chunk blauen is 0
+[1] similarity between knopf and blauen in chunk blauen is -1
+[1] in retrieve
+[1] ---- In add.time ----
+[1] Updated Time: 1.78189393164146
+[1] in get.activation
+[1] spreading act 0.23176034792765 (W = 0.166666666666667 , Sij = 1.3905620875659 ) from DP to chunk knopf
+[1] spreading act 0.500711287741001 (W = 0.166666666666667 , Sij = 1.61370563888011 ) from masc to chunk knopf
+[1] spreading act 0.81760923962965 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from inani to chunk knopf
+[1] spreading act 1.20208470953633 (W = 0.166666666666667 , Sij = 2.30685281944005 ) from knopf to chunk knopf
+[1] spreading act 1.51898266142497 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from blau to chunk knopf
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  1.28690010696007
+[1] in Noise 2: 0.028735300219582
+[1] "knopf"
+[1] "[NEW] spread.act = 1.51898266142497"
+[1] in get.activation
+[1] spreading act 0.23176034792765 (W = 0.166666666666667 , Sij = 1.3905620875659 ) from DP to chunk flasche
+[1] spreading act 0.548658299816298 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from inani to chunk flasche
+[1] spreading act 0.865556251704947 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from blau to chunk flasche
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.274607783936604
+[1] in Noise 2: 0.0388044355707761
+[1] "flasche"
+[1] "[NEW] spread.act = 0.865556251704947"
+[1] 
+[1] Time:  1.78189393164146
+[1] "1"      "8"      "RetLat" "1782"   "2.8346" "0.6298"
+[1] Retrieving knopf at:  1.78189393164146  Activation: 5.59072758361587
+[1] ---- In add.time ----
+[1] Updated Time: 1.83189393164146
+[1] in get.activation
+[1] spreading act 0.23176034792765 (W = 0.166666666666667 , Sij = 1.3905620875659 ) from DP to chunk knopf
+[1] spreading act 0.500711287741001 (W = 0.166666666666667 , Sij = 1.61370563888011 ) from masc to chunk knopf
+[1] spreading act 0.81760923962965 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from inani to chunk knopf
+[1] spreading act 1.20208470953633 (W = 0.166666666666667 , Sij = 2.30685281944005 ) from knopf to chunk knopf
+[1] spreading act 1.51898266142497 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from blau to chunk knopf
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  2.07091867576738
+[1] in Noise 2: 0.228198948121908
+[1] "knopf"
+[1] "[NEW] spread.act = 1.51898266142497"
+[1] in get.activation
+[1] spreading act 0.23176034792765 (W = 0.166666666666667 , Sij = 1.3905620875659 ) from DP to chunk flasche
+[1] spreading act 0.548658299816298 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from inani to chunk flasche
+[1] spreading act 0.865556251704947 (W = 0.166666666666667 , Sij = 1.90138771133189 ) from blau to chunk flasche
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.288838402595193
+[1] in Noise 2: -0.220610893087096
+[1] "flasche"
+[1] "[NEW] spread.act = 0.865556251704947"
+[1] 
+[1] Time:  1.83189393164146
+[1] "1"      "8"      "Att"    "1832"   "3.8181" "0.3561"
+[1] Production fired: Attach-knopf
+[1] 
+[1] ===============   Stage  9 : p.match.knopf   ===============
+[1] in conflict.resolution
+[1] in noise
+[1] Noise:  0
+[1] Production:  p.match.knopf Utility:  Utility+Noise:  0 0
+[1] Production selected: p.match.knopf
+[1] ---- In add.time ----
+[1] Updated Time: 1.88189393164146
+[1] in get.activation
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  1.8694549778039
+[1] in Noise 2: 0.0648541839503195
+[1] "knopf"
+[1] "[NEW] spread.act = 0"
+[1] in get.activation
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.302675183500094
+[1] in Noise 2: -0.494744960420568
+[1] "flasche"
+[1] "[NEW] spread.act = 0"
+[1] 
+[1] Time:  1.88189393164146
+[1] "1"       "9"       "SetRC"   "1882"    "1.9343"  "-0.7974"
+[1] Production fired: Set-Retrieval-Cues-p.match.knopf
+[1] ------- retrieval --------
+[1] in retrieval.request
+[1] in list.cues
+[1] cue 1 : type = syn-obj
+[1] cue 2 : cat = DP
+[1] cue 3 : gend = masc
+[1] cue 4 : animacy = inani
+[1] cue 5 : ref = pic
+[1] cue 6 : col = blau
+[1] cue 7 : name = knopf
+[1] in build.retQ
+     [,1]    [,2]    [,3]
+[1,] type    syn-obj 1   
+[2,] cat     DP      5   
+[3,] gend    masc    4   
+[4,] animacy inani   3   
+[5,] ref     pic     4   
+[6,] col     blau    3   
+[7,] name    knopf   2   
+[1] 
+[1]                  Activation Spreading
+[1] in compute.act.spreading
+[1] spreading act 0.198651726795129 (W = 0.142857142857143 , Sij = 1.3905620875659 ) from DP to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 0.198651726795129"
+[1] spreading act 0.230529376982873 (W = 0.142857142857143 , Sij = 1.61370563888011 ) from masc to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 0.429181103778001"
+[1] spreading act 0.271626815904556 (W = 0.142857142857143 , Sij = 1.90138771133189 ) from inani to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 0.700807919682557"
+[1] spreading act 0.230529376982873 (W = 0.142857142857143 , Sij = 1.61370563888011 ) from pic to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 0.93133729666543"
+[1] spreading act 1.55734110161884 (W = 0.142857142857143 , Sij = 10.9013877113319 ) from blau to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 2.48867839828427"
+[1] spreading act 1.61526468849144 (W = 0.142857142857143 , Sij = 11.3068528194401 ) from knopf to chunk knopf
+[1] "knopf"
+[1] "[OLD] spread.act = 4.10394308677571"
+[1] spreading act 0.198651726795129 (W = 0.142857142857143 , Sij = 1.3905620875659 ) from DP to chunk flasche
+[1] "flasche"
+[1] "[OLD] spread.act = 0.198651726795129"
+[1] spreading act 0.271626815904556 (W = 0.142857142857143 , Sij = 1.90138771133189 ) from inani to chunk flasche
+[1] "flasche"
+[1] "[OLD] spread.act = 0.470278542699684"
+[1] spreading act 0.230529376982873 (W = 0.142857142857143 , Sij = 1.61370563888011 ) from pic to chunk flasche
+[1] "flasche"
+[1] "[OLD] spread.act = 0.700807919682557"
+[1] spreading act 1.55734110161884 (W = 0.142857142857143 , Sij = 10.9013877113319 ) from blau to chunk flasche
+[1] "flasche"
+[1] "[OLD] spread.act = 2.2581490213014"
+[1] spreading act 0.198651726795129 (W = 0.142857142857143 , Sij = 1.3905620875659 ) from DP to chunk martin
+[1] "martin"
+[1] "[OLD] spread.act = 0.198651726795129"
+[1] spreading act 0.230529376982873 (W = 0.142857142857143 , Sij = 1.61370563888011 ) from masc to chunk martin
+[1] "martin"
+[1] "[OLD] spread.act = 0.429181103778001"
+[1] spreading act 0.198651726795129 (W = 0.142857142857143 , Sij = 1.3905620875659 ) from DP to chunk sarah
+[1] "sarah"
+[1] "[OLD] spread.act = 0.198651726795129"
+[1] spreading act 0.230529376982873 (W = 0.142857142857143 , Sij = 1.61370563888011 ) from masc to chunk blauen
+[1] "blauen"
+[1] "[OLD] spread.act = 0.230529376982873"
+[1] in compute.base.act
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  1.8694549778039
+[1] in noise
+[1] Noise:  0.170382567609769
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.302675183500094
+[1] in noise
+[1] Noise:  0.143792679590805
+[1] in Bi
+[1] Chunk: martin
+[1] Base level:  -0.302675183500094
+[1] in noise
+[1] Noise:  0.534396863652537
+[1] in Bi
+[1] Chunk: sarah
+[1] Base level:  0.554529450580608
+[1] in noise
+[1] Noise:  0.0176885689411382
+[1] in Bi
+[1] Chunk: ip
+[1] Base level:  0.464802752392898
+[1] in noise
+[1] Noise:  -0.142585517865022
+[1] in Bi
+[1] Chunk: klicke_auf
+[1] Base level:  0.587133410845134
+[1] in noise
+[1] Noise:  -0.0762709136267899
+[1] in Bi
+[1] Chunk: empty-np
+[1] Base level:  0.850317635276296
+[1] in noise
+[1] Noise:  0.195288013672661
+[1] in Bi
+[1] Chunk: empty-dp
+[1] Base level:  -0.0257606241934522
+[1] in noise
+[1] Noise:  -0.295764911274739
+[1] in Bi
+[1] Chunk: blauen
+[1] Base level:  0.360713464814899
+[1] in noise
+[1] Noise:  0.0124859333302386
+[1] 
+[1]                  Partial Match
+[1] in compute.partial.match
+[1] similarity between DP and DP in chunk knopf is 0
+[1] similarity between masc and masc in chunk knopf is 0
+[1] similarity between inani and inani in chunk knopf is 0
+[1] similarity between pic and pic in chunk knopf is 0
+[1] similarity between blau and blau in chunk knopf is 0
+[1] similarity between knopf and knopf in chunk knopf is 0
+[1] similarity between DP and DP in chunk flasche is 0
+[1] similarity between masc and fem in chunk flasche is -1
+[1] similarity between inani and inani in chunk flasche is 0
+[1] similarity between pic and pic in chunk flasche is 0
+[1] similarity between blau and blau in chunk flasche is 0
+[1] similarity between knopf and flasche in chunk flasche is -1
+[1] similarity between DP and DP in chunk martin is 0
+[1] similarity between masc and masc in chunk martin is 0
+[1] similarity between inani and ani in chunk martin is -1
+[1] similarity between knopf and martin in chunk martin is -1
+[1] similarity between DP and DP in chunk sarah is 0
+[1] similarity between masc and fem in chunk sarah is -1
+[1] similarity between inani and ani in chunk sarah is -1
+[1] similarity between knopf and sarah in chunk sarah is -1
+[1] similarity between DP and IP in chunk ip is -1
+[1] similarity between knopf and ip in chunk ip is -1
+[1] similarity between DP and VP in chunk klicke_auf is -1
+[1] similarity between knopf and klicke_auf in chunk klicke_auf is -1
+[1] similarity between DP and NP-empty in chunk empty-np is -1
+[1] similarity between masc and masc.PRED in chunk empty-np is -1
+[1] similarity between knopf and empty-np in chunk empty-np is -1
+[1] similarity between DP and DP-empty in chunk empty-dp is -1
+[1] similarity between masc and masc.PRED in chunk empty-dp is -1
+[1] similarity between knopf and empty-dp in chunk empty-dp is -1
+[1] similarity between DP and AdjP in chunk blauen is -1
+[1] similarity between masc and masc in chunk blauen is 0
+[1] similarity between knopf and blauen in chunk blauen is -1
+[1] in retrieve
+[1] ---- In add.time ----
+[1] Updated Time: 1.88197980332249
+[1] in get.activation
+[1] spreading act 0.198651726795129 (W = 0.142857142857143 , Sij = 1.3905620875659 ) from DP to chunk knopf
+[1] spreading act 0.429181103778001 (W = 0.142857142857143 , Sij = 1.61370563888011 ) from masc to chunk knopf
+[1] spreading act 0.700807919682557 (W = 0.142857142857143 , Sij = 1.90138771133189 ) from inani to chunk knopf
+[1] spreading act 0.93133729666543 (W = 0.142857142857143 , Sij = 1.61370563888011 ) from pic to chunk knopf
+[1] spreading act 1.20296411256999 (W = 0.142857142857143 , Sij = 1.90138771133189 ) from blau to chunk knopf
+[1] spreading act 1.53251451534714 (W = 0.142857142857143 , Sij = 2.30685281944005 ) from knopf to chunk knopf
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  1.86921191630409
+[1] in Noise 2: -0.0545197197004184
+[1] "knopf"
+[1] "[NEW] spread.act = 1.53251451534714"
+[1] in get.activation
+[1] spreading act 0.198651726795129 (W = 0.142857142857143 , Sij = 1.3905620875659 ) from DP to chunk flasche
+[1] spreading act 0.470278542699684 (W = 0.142857142857143 , Sij = 1.90138771133189 ) from inani to chunk flasche
+[1] spreading act 0.700807919682557 (W = 0.142857142857143 , Sij = 1.61370563888011 ) from pic to chunk flasche
+[1] spreading act 0.972434735587113 (W = 0.142857142857143 , Sij = 1.90138771133189 ) from blau to chunk flasche
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.302698620901941
+[1] in Noise 2: -0.25222875936059
+[1] "flasche"
+[1] "[NEW] spread.act = 0.972434735587113"
+[1] 
+[1] Time:  1.88197980332249
+[1] "1"      "9"      "RetLat" "1882"   "3.3472" "0.4175"
+[1] Retrieving knopf at:  1.88197980332249  Activation: 6.14378063218938
+[1] ---- In add.time ----
+[1] Updated Time: 1.93197980332249
+[1] in get.activation
+[1] spreading act 0.198651726795129 (W = 0.142857142857143 , Sij = 1.3905620875659 ) from DP to chunk knopf
+[1] spreading act 0.429181103778001 (W = 0.142857142857143 , Sij = 1.61370563888011 ) from masc to chunk knopf
+[1] spreading act 0.700807919682557 (W = 0.142857142857143 , Sij = 1.90138771133189 ) from inani to chunk knopf
+[1] spreading act 0.93133729666543 (W = 0.142857142857143 , Sij = 1.61370563888011 ) from pic to chunk knopf
+[1] spreading act 1.20296411256999 (W = 0.142857142857143 , Sij = 1.90138771133189 ) from blau to chunk knopf
+[1] spreading act 1.53251451534714 (W = 0.142857142857143 , Sij = 2.30685281944005 ) from knopf to chunk knopf
+[1] in Bi
+[1] Chunk: knopf
+[1] Base level:  2.32789880889957
+[1] in Noise 2: -0.770822117409838
+[1] "knopf"
+[1] "[NEW] spread.act = 1.53251451534714"
+[1] in get.activation
+[1] spreading act 0.198651726795129 (W = 0.142857142857143 , Sij = 1.3905620875659 ) from DP to chunk flasche
+[1] spreading act 0.470278542699684 (W = 0.142857142857143 , Sij = 1.90138771133189 ) from inani to chunk flasche
+[1] spreading act 0.700807919682557 (W = 0.142857142857143 , Sij = 1.61370563888011 ) from pic to chunk flasche
+[1] spreading act 0.972434735587113 (W = 0.142857142857143 , Sij = 1.90138771133189 ) from blau to chunk flasche
+[1] in Bi
+[1] Chunk: flasche
+[1] Base level:  -0.31616215480426
+[1] in Noise 2: -0.0228147749790779
+[1] "flasche"
+[1] "[NEW] spread.act = 0.972434735587113"
+[1] 
+[1] Time:  1.93197980332249
+[1] "1"      "9"      "Att"    "1932"   "3.0896" "0.6335"
+[1] Production fired: Attach-p.match.knopf
+[1] 
+[1] 
