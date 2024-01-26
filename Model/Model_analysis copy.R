@@ -26,38 +26,19 @@ nSims <- 10000
 signif_seq_len <- 5
 
 # step no. corresponding to pronoun / determiner 
-pronOnsetStep <- DetOnsetStep <- 3
-
-
-# Add names to the steps
-step.cond1 <- step.cond2 <- c("empty", "click_on", "pronoun", 
-                              "antecedent_retrieval", "picture_prediction", 
-                              "adjective", "picture_prediction", "target", 
-                              "picture_prediction")
-
-step.cond3 <- c("empty", "click_on", "pronoun", "antecedent_retrieval", 
-                "adjective", "picture_prediction", "target", 
-                "picture_prediction")
+pronOnsetStep = DetOnsetStep = 3
 
 
 # -------------------------------------------------------------
 #        Condition: MATCH
 # -------------------------------------------------------------
 
-# Create a named vector for step names
-named_steps <- setNames(step.cond1, 1:length(step.cond1))
-
-# Load model output -- activation values for 'Knopf' and 'Flasche' sampled
-# at various time points
 act.cond1 <- read_csv('R-ACT-R/output-10k/cond-1/act-out-1.csv') %>%
   # remove NAs, the first row is always NAs
   na.omit() %>%
   # create numbers for subSteps (needed for significance testing)
   group_by(simNo) %>%
-  # add subset numbers
-  mutate(subStepsNo = 1:n(), 
-         # add names for steps
-         step = named_steps[as.character(stepNo)]) %>% 
+  mutate(subStepsNo = 1:n()) %>% 
   # remove the grouping metadata
   ungroup()
 
@@ -127,15 +108,11 @@ fix.prob.cond1 <- act.cond1 %>%
   )
 
 
-# ******* NEXT ==> add comments
-
-# Mean timestamp for each substep
 subSteps <- act.cond1 %>%
   group_by(stepNo, subStep) %>%
   summarise(subSteptime = mean(time)) %>% 
   arrange(subSteptime)
 
-# 
 steps <- subSteps %>% 
   group_by(stepNo) %>% 
   summarise(stepStartTime = min(subSteptime))
@@ -143,6 +120,10 @@ steps <- subSteps %>%
 pronOnset = steps %>% 
   filter(stepNo == pronOnsetStep) %>% 
   pull(stepStartTime)
+  
+input.stages.cond1 = c("<empty>", "klicke_auf", "pronoun", "<ant ret>", 
+                 "<pic pred>", "blauen", "<pic pred>", 
+                 "knopf", "<pic pred>")
 
 
 # Plot fixation probabilities ----
@@ -161,8 +142,8 @@ ggplot(fix.prob.cond1,
              linetype="dotted", color = "gray70") +
   geom_vline(xintercept = steps$stepStartTime,
              color = "gray80", ) +
-  annotate("text", x=steps$stepStartTime, y=0, size = 3,
-           label= step.cond1, angle=90, hjust = 0) +
+  annotate("text", x=steps$stepStartTime, y=0, 
+           label= input.stages.cond1, angle=90, hjust = 0) +
   annotate("text", x=subSteps$subSteptime, y=0.9, size = 2.5, 
            label= subSteps$subStep, angle=90, hjust = 0) +
   annotate("text", x=onset.cond1, y=0.5, col = 'red', size = 5,
@@ -173,7 +154,7 @@ ggplot(fix.prob.cond1,
                         labels = c("Flasche", "Knopf")) +
   geom_line(aes(linetype=fix.prob.type ))
 
-ggsave('model-predictions/plots/MeanFixProb-cond-MATCH.png', plot = last_plot())
+ggsave('plots/MeanFixProb-cond-MATCH.png', plot = last_plot())
 
 
 
@@ -181,23 +162,11 @@ ggsave('model-predictions/plots/MeanFixProb-cond-MATCH.png', plot = last_plot())
 #        Condition: MISMATCH
 # -------------------------------------------------------------
 
-# Create a named vector for step names
-named_steps <- setNames(step.cond2, 1:length(step.cond2))
-
-# Load model output -- activation values for 'Knopf' and 'Flasche' sampled
-# at various time points
 act.cond2 <- read_csv('R-ACT-R/output-10k/cond-2/act-out-1.csv') %>%
-  # remove NAs, the first row is always NAs
   na.omit() %>%
-  # create numbers for subSteps (needed for significance testing)
   group_by(simNo) %>%
-  # add subset numbers
-  mutate(subStepsNo = 1:n(), 
-         # add names for steps
-         step = named_steps[as.character(stepNo)]) %>% 
-  # remove the grouping metadata
+  mutate(subStepsNo = 1:n()) %>% 
   ungroup()
-
 
 # act.cond2 <- read_csv('R-ACT-R/output-10k/cond-1/act-out-1.csv') %>% 
 #   na.omit()
@@ -269,7 +238,6 @@ fix.prob.cond2 <- act.cond2 %>%
     values_to = "fix.prob"
   )
 
-# Mean timestamp for each substep
 subSteps <- act.cond2 %>%
   group_by(stepNo, subStep) %>%
   summarise(subSteptime = mean(time)) %>% 
@@ -282,6 +250,11 @@ steps <- subSteps %>%
 pronOnset = steps %>% 
   filter(stepNo == pronOnsetStep) %>% 
   pull(stepStartTime)
+
+
+input.stages.cond2 = c("<empty>", "klicke_auf", "pronoun", "<ant ret>", 
+                       "<pic pred>", "blauen", "<pic pred>", 
+                       "knopf", "<pic pred>")
 
 
 # Plot fixation probabilities ----
@@ -300,8 +273,8 @@ ggplot(fix.prob.cond2,
              linetype="dotted", color = "gray70") +
   geom_vline(xintercept = steps$stepStartTime,
              color = "gray80", ) +
-  annotate("text", x=steps$stepStartTime, y=0, size = 3, 
-           label= step.cond2, angle=90, hjust = 0) +
+  annotate("text", x=steps$stepStartTime, y=0, 
+           label= input.stages.cond2, angle=90, hjust = 0) +
   annotate("text", x=subSteps$subSteptime, y=0.9, size = 2.5, 
            label= subSteps$subStep, angle=90, hjust = 0) +
   annotate("text", x=onset.cond2, y=0.5, col = 'red', size = 5,
@@ -312,7 +285,7 @@ ggplot(fix.prob.cond2,
                         labels = c("Flasche", "Knopf")) +
   geom_line(aes(linetype=fix.prob.type ))
 
-ggsave('model-predictions/plots/MeanFixProb-cond-MISMATCH.png', plot = last_plot())
+ggsave('plots/MeanFixProb-cond-MISMATCH.png', plot = last_plot())
 
 
 
@@ -320,23 +293,11 @@ ggsave('model-predictions/plots/MeanFixProb-cond-MISMATCH.png', plot = last_plot
 #        Condition: BASELINE
 # -------------------------------------------------------------
 
-# Create a named vector for step names
-named_steps <- setNames(step.cond3, 1:length(step.cond3))
-
-# Load model output -- activation values for 'Knopf' and 'Flasche' sampled
-# at various time points
 act.cond3 <- read_csv('R-ACT-R/output-10k/cond-3/act-out-1.csv') %>%
-  # remove NAs, the first row is always NAs
   na.omit() %>%
-  # create numbers for subSteps (needed for significance testing)
   group_by(simNo) %>%
-  # add subset numbers
-  mutate(subStepsNo = 1:n(), 
-         # add names for steps
-         step = named_steps[as.character(stepNo)]) %>% 
-  # remove the grouping metadata
+  mutate(subStepsNo = 1:n()) %>% 
   ungroup()
-
 
 # act.cond3 <- read_csv('R-ACT-R/output-10k/cond-1/act-out-1.csv') %>% 
 #   na.omit()
@@ -408,7 +369,6 @@ fix.prob.cond3 <- act.cond3 %>%
     values_to = "fix.prob"
   )
 
-# Mean timestamp for each substep
 subSteps <- act.cond3 %>%
   group_by(stepNo, subStep) %>%
   summarise(subSteptime = mean(time)) %>% 
@@ -421,6 +381,11 @@ steps <- subSteps %>%
 pronOnset = steps %>% 
   filter(stepNo == pronOnsetStep) %>% 
   pull(stepStartTime)
+
+
+input.stages.cond3 = c("<empty>", "klicke_auf", "determiner", 
+                       "<pic pred>", "blauen", "<pic pred>", 
+                       "knopf", "<pic pred>")
 
 
 # Plot fixation probabilities ----
@@ -439,8 +404,8 @@ ggplot(fix.prob.cond3,
              linetype="dotted", color = "gray70") +
   geom_vline(xintercept = steps$stepStartTime,
              color = "gray80", ) +
-  annotate("text", x=steps$stepStartTime, y=0, size = 3, 
-           label= step.cond3, angle=90, hjust = 0) +
+  annotate("text", x=steps$stepStartTime, y=0, 
+           label= input.stages.cond3, angle=90, hjust = 0) +
   annotate("text", x=subSteps$subSteptime, y=0.9, size = 2.5, 
            label= subSteps$subStep, angle=90, hjust = 0) +
   annotate("text", x=onset.cond3, y=0.5, col = 'red', size = 5, 
@@ -451,7 +416,7 @@ ggplot(fix.prob.cond3,
                         labels = c("Flasche", "Knopf")) +
   geom_line(aes(linetype=fix.prob.type ))
 
-ggsave('model-predictions/plots/MeanFixProb-cond-BASELINE.png', plot = last_plot())
+ggsave('plots/MeanFixProb-cond-BASELINE.png', plot = last_plot())
 
 
 
@@ -459,9 +424,10 @@ ggsave('model-predictions/plots/MeanFixProb-cond-BASELINE.png', plot = last_plot
 #        Save processed model predictions to CSVs
 # -------------------------------------------------------------
 
-write_csv(act.cond1, file='model-predictions/predictions-cond-MATCH.csv')
-write_csv(act.cond2, file='model-predictions/predictions-cond-MISMATCH.csv')
-write_csv(act.cond3, file='model-predictions/predictions-cond-BASELINE.csv')
+write_csv(act.cond1, file='data_processed/predictions-cond-1-MATCH.csv')
+write_csv(act.cond2, file='data_processed/predictions-cond-2-MISMATCH.csv')
+write_csv(act.cond3, file='data_processed/predictions-cond-3-DET.csv')
+
 
 
 
