@@ -29,13 +29,17 @@ signif_seq_len <- 5
 pronOnsetStep <- DetOnsetStep <- 3
 
 
-# Add names to the steps
+# Add names to conditions and steps
+cond1.name <- 'Match'
+cond2.name <- 'Mismatch'
+cond3.name <- 'Baseline'
+
 step.cond1 <- step.cond2 <- c("empty", "click_on", "pronoun", 
                               "antecedent_retrieval", "picture_prediction", 
                               "adjective", "picture_prediction", "target", 
                               "picture_prediction")
 
-step.cond3 <- c("empty", "click_on", "pronoun", "antecedent_retrieval", 
+step.cond3 <- c("empty", "click_on", "determiner", "picture_prediction", 
                 "adjective", "picture_prediction", "target", 
                 "picture_prediction")
 
@@ -127,22 +131,35 @@ fix.prob.cond1 <- act.cond1 %>%
   )
 
 
-# ******* NEXT ==> add comments
-
 # Mean timestamp for each substep
 subSteps <- act.cond1 %>%
   group_by(stepNo, subStep) %>%
   summarise(subSteptime = mean(time)) %>% 
   arrange(subSteptime)
 
-# 
-steps <- subSteps %>% 
-  group_by(stepNo) %>% 
-  summarise(stepStartTime = min(subSteptime))
 
+# The onset of the step in the fastest simulation.
+# Calculate onset of the each step:
+# 
+# This piece of code first calculates the onset of the 
+# first substep in each step of each simulation (which 
+# stands for the onset of each step in that simulation),
+# and then calculates the mean across all simulations 
+# (so mean onset of each step across all simulations).
+steps <- act.cond1 %>% 
+  group_by(simNo, stepNo) %>% 
+  mutate(stepOnset = min(time)) %>%
+  select(simNo, stepNo, stepOnset) %>% 
+  distinct() %>% 
+  group_by(stepNo) %>% 
+  summarise(meanStepOnset = mean(stepOnset))
+
+steps
+
+# Mean pronoun onset
 pronOnset = steps %>% 
   filter(stepNo == pronOnsetStep) %>% 
-  pull(stepStartTime)
+  pull(meanStepOnset)
 
 
 # Plot fixation probabilities ----
@@ -156,24 +173,23 @@ ggplot(fix.prob.cond1,
   geom_point() +
   ylab('') +
   xlab('Time') +
-  ggtitle('Match') +
+  ggtitle(cond1.name) +
   geom_vline(xintercept = subSteps$subSteptime, 
              linetype="dotted", color = "gray70") +
-  geom_vline(xintercept = steps$stepStartTime,
+  geom_vline(xintercept = steps$meanStepOnset,
              color = "gray80", ) +
-  annotate("text", x=steps$stepStartTime, y=0, size = 3,
+  annotate("text", x=steps$meanStepOnset, y=0, size = 3,
            label= step.cond1, angle=90, hjust = 0) +
   annotate("text", x=subSteps$subSteptime, y=0.9, size = 2.5, 
            label= subSteps$subStep, angle=90, hjust = 0) +
   annotate("text", x=onset.cond1, y=0.5, col = 'red', size = 5,
            label = "x", fontface = "bold") +
-  # geom_vline(xintercept = pronOnset, color = "gray45") +
   scale_linetype_manual(name = "", 
                         values = c("dashed", "solid"), 
                         labels = c("Flasche", "Knopf")) +
   geom_line(aes(linetype=fix.prob.type ))
 
-ggsave('model-predictions/plots/MeanFixProb-cond-MATCH.png', plot = last_plot())
+ggsave(paste('model-predictions/plots/MeanFixProb-cond-', cond1.name, '.png', sep=""), plot = last_plot())
 
 
 
@@ -199,10 +215,7 @@ act.cond2 <- read_csv('R-ACT-R/output-10k/cond-2/act-out-1.csv') %>%
   ungroup()
 
 
-# act.cond2 <- read_csv('R-ACT-R/output-10k/cond-1/act-out-1.csv') %>% 
-#   na.omit()
-
-# Print mean activation values for Knopf and Flasche
+# Print mean activation values for Knopf and Flasche across all steps+subStep
 act.cond2 %>% 
   group_by(stepNo, subStep) %>% 
   summarise(time = mean(time), 
@@ -212,7 +225,7 @@ act.cond2 %>%
   print(n = Inf)
 
 
-# Generate fixations predictions from activations ----
+# Generate fixations predictions from activation ----
 
 # 'map_int()' is needed because otherwise sample() isn't called 
 # for each row, but only once since ifelse() evaluates for all rows
@@ -228,16 +241,14 @@ act.cond2 <- act.cond2 %>%
   })) %>% 
   mutate(flasche.fix = 1 - knopf.fix)
 
-# Sanity check
+
+# Sanity check: cases where activation is the same
+# the predicted fixation should be random; check that
+# the means are close to 0.5
 act.cond2 %>% 
   filter(knopf.act == flasche.act) %>% 
   summarise(mean(knopf.fix), mean(flasche.fix))
 
-
-# # Add the number to the subSteps
-# act.cond2 <- act.cond2 %>% 
-#   group_by(simNo) %>%
-#   mutate(subStepsNo = 1:n())
 
 # Find the subStepsNo that leads to significant effect
 signif.cond2 <- act.cond2 %>% 
@@ -247,6 +258,7 @@ signif.cond2 <- act.cond2 %>%
                                 alternative = "greater")$p.value < 0.05) %>% 
   check_signif_ind(seq_len = signif_seq_len)
 
+
 # Find the onset as the mean of the timestamp for that 'subStepsNo'
 onset.cond2 <- act.cond2 %>% 
   filter(subStepsNo == signif.cond2) %>% 
@@ -254,10 +266,8 @@ onset.cond2 <- act.cond2 %>%
   pull()
 
 
-# Create fixation probabilities ----
+# Create fixation probabilities
 fix.prob.cond2 <- act.cond2 %>%
-  # filter(stepNo > 2) %>% 
-  # group_by(stepNo, subStep) %>% 
   group_by(stepNo) %>% 
   summarise(time = mean(time), 
             k.fix.prob = mean(knopf.fix), 
@@ -269,19 +279,36 @@ fix.prob.cond2 <- act.cond2 %>%
     values_to = "fix.prob"
   )
 
+
 # Mean timestamp for each substep
 subSteps <- act.cond2 %>%
   group_by(stepNo, subStep) %>%
   summarise(subSteptime = mean(time)) %>% 
   arrange(subSteptime)
 
-steps <- subSteps %>% 
-  group_by(stepNo) %>% 
-  summarise(stepStartTime = min(subSteptime))
 
+# The onset of the step in the fastest simulation.
+# Calculate onset of the each step:
+# 
+# This piece of code first calculates the onset of the 
+# first substep in each step of each simulation (which 
+# stands for the onset of each step in that simulation),
+# and then calculates the mean across all simulations 
+# (so mean onset of each step across all simulations).
+steps <- act.cond2 %>% 
+  group_by(simNo, stepNo) %>% 
+  mutate(stepOnset = min(time)) %>%
+  select(simNo, stepNo, stepOnset) %>% 
+  distinct() %>% 
+  group_by(stepNo) %>% 
+  summarise(meanStepOnset = mean(stepOnset))
+
+steps
+
+# Mean pronoun onset
 pronOnset = steps %>% 
   filter(stepNo == pronOnsetStep) %>% 
-  pull(stepStartTime)
+  pull(meanStepOnset)
 
 
 # Plot fixation probabilities ----
@@ -295,24 +322,23 @@ ggplot(fix.prob.cond2,
   geom_point() +
   ylab('') +
   xlab('Time') +
-  ggtitle('Mismatch') +
+  ggtitle(cond2.name) +
   geom_vline(xintercept = subSteps$subSteptime, 
              linetype="dotted", color = "gray70") +
-  geom_vline(xintercept = steps$stepStartTime,
+  geom_vline(xintercept = steps$meanStepOnset,
              color = "gray80", ) +
-  annotate("text", x=steps$stepStartTime, y=0, size = 3, 
+  annotate("text", x=steps$meanStepOnset, y=0, size = 3,
            label= step.cond2, angle=90, hjust = 0) +
   annotate("text", x=subSteps$subSteptime, y=0.9, size = 2.5, 
            label= subSteps$subStep, angle=90, hjust = 0) +
   annotate("text", x=onset.cond2, y=0.5, col = 'red', size = 5,
            label = "x", fontface = "bold") +
-  # geom_vline(xintercept = pronOnset, color = "gray45") +
   scale_linetype_manual(name = "", 
                         values = c("dashed", "solid"), 
                         labels = c("Flasche", "Knopf")) +
   geom_line(aes(linetype=fix.prob.type ))
 
-ggsave('model-predictions/plots/MeanFixProb-cond-MISMATCH.png', plot = last_plot())
+ggsave(paste('model-predictions/plots/MeanFixProb-cond-', cond2.name, '.png', sep=""), plot = last_plot())
 
 
 
@@ -338,10 +364,7 @@ act.cond3 <- read_csv('R-ACT-R/output-10k/cond-3/act-out-1.csv') %>%
   ungroup()
 
 
-# act.cond3 <- read_csv('R-ACT-R/output-10k/cond-1/act-out-1.csv') %>% 
-#   na.omit()
-
-# Print mean activation values for Knopf and Flasche
+# Print mean activation values for Knopf and Flasche across all steps+subStep
 act.cond3 %>% 
   group_by(stepNo, subStep) %>% 
   summarise(time = mean(time), 
@@ -351,7 +374,7 @@ act.cond3 %>%
   print(n = Inf)
 
 
-# Generate fixations predictions from activations ----
+# Generate fixations predictions from activation ----
 
 # 'map_int()' is needed because otherwise sample() isn't called 
 # for each row, but only once since ifelse() evaluates for all rows
@@ -367,16 +390,14 @@ act.cond3 <- act.cond3 %>%
   })) %>% 
   mutate(flasche.fix = 1 - knopf.fix)
 
-# Sanity check
+
+# Sanity check: cases where activation is the same
+# the predicted fixation should be random; check that
+# the means are close to 0.5
 act.cond3 %>% 
   filter(knopf.act == flasche.act) %>% 
   summarise(mean(knopf.fix), mean(flasche.fix))
 
-
-# # Add the number to the subSteps
-# act.cond3 <- act.cond3 %>% 
-#   group_by(simNo) %>%
-#   mutate(subStepsNo = 1:n())
 
 # Find the subStepsNo that leads to significant effect
 signif.cond3 <- act.cond3 %>% 
@@ -386,6 +407,7 @@ signif.cond3 <- act.cond3 %>%
                                 alternative = "greater")$p.value < 0.05) %>% 
   check_signif_ind(seq_len = signif_seq_len)
 
+
 # Find the onset as the mean of the timestamp for that 'subStepsNo'
 onset.cond3 <- act.cond3 %>% 
   filter(subStepsNo == signif.cond3) %>% 
@@ -393,10 +415,8 @@ onset.cond3 <- act.cond3 %>%
   pull()
 
 
-# Create fixation probabilities ----
+# Create fixation probabilities
 fix.prob.cond3 <- act.cond3 %>%
-  # filter(stepNo > 2) %>% 
-  # group_by(stepNo, subStep) %>% 
   group_by(stepNo) %>% 
   summarise(time = mean(time), 
             k.fix.prob = mean(knopf.fix), 
@@ -408,19 +428,36 @@ fix.prob.cond3 <- act.cond3 %>%
     values_to = "fix.prob"
   )
 
+
 # Mean timestamp for each substep
 subSteps <- act.cond3 %>%
   group_by(stepNo, subStep) %>%
   summarise(subSteptime = mean(time)) %>% 
   arrange(subSteptime)
 
-steps <- subSteps %>% 
-  group_by(stepNo) %>% 
-  summarise(stepStartTime = min(subSteptime))
 
+# The onset of the step in the fastest simulation.
+# Calculate onset of the each step:
+# 
+# This piece of code first calculates the onset of the 
+# first substep in each step of each simulation (which 
+# stands for the onset of each step in that simulation),
+# and then calculates the mean across all simulations 
+# (so mean onset of each step across all simulations).
+steps <- act.cond3 %>% 
+  group_by(simNo, stepNo) %>% 
+  mutate(stepOnset = min(time)) %>%
+  select(simNo, stepNo, stepOnset) %>% 
+  distinct() %>% 
+  group_by(stepNo) %>% 
+  summarise(meanStepOnset = mean(stepOnset))
+
+steps
+
+# Mean pronoun onset
 pronOnset = steps %>% 
   filter(stepNo == pronOnsetStep) %>% 
-  pull(stepStartTime)
+  pull(meanStepOnset)
 
 
 # Plot fixation probabilities ----
@@ -434,24 +471,23 @@ ggplot(fix.prob.cond3,
   geom_point() +
   ylab('') +
   xlab('Time') +
-  ggtitle('Baseline') +
+  ggtitle(cond3.name) +
   geom_vline(xintercept = subSteps$subSteptime, 
              linetype="dotted", color = "gray70") +
-  geom_vline(xintercept = steps$stepStartTime,
+  geom_vline(xintercept = steps$meanStepOnset,
              color = "gray80", ) +
-  annotate("text", x=steps$stepStartTime, y=0, size = 3, 
+  annotate("text", x=steps$meanStepOnset, y=0, size = 3,
            label= step.cond3, angle=90, hjust = 0) +
   annotate("text", x=subSteps$subSteptime, y=0.9, size = 2.5, 
            label= subSteps$subStep, angle=90, hjust = 0) +
-  annotate("text", x=onset.cond3, y=0.5, col = 'red', size = 5, 
+  annotate("text", x=onset.cond3, y=0.5, col = 'red', size = 5,
            label = "x", fontface = "bold") +
-  # geom_vline(xintercept = pronOnset, color = "gray45") +
   scale_linetype_manual(name = "", 
                         values = c("dashed", "solid"), 
                         labels = c("Flasche", "Knopf")) +
   geom_line(aes(linetype=fix.prob.type ))
 
-ggsave('model-predictions/plots/MeanFixProb-cond-BASELINE.png', plot = last_plot())
+ggsave(paste('model-predictions/plots/MeanFixProb-cond-', cond3.name, '.png', sep=""), plot = last_plot())
 
 
 
@@ -464,4 +500,41 @@ write_csv(act.cond2, file='model-predictions/predictions-cond-MISMATCH.csv')
 write_csv(act.cond3, file='model-predictions/predictions-cond-BASELINE.csv')
 
 
+
+
+# -------------------------------------------------------------
+# TEMP
+# -------------------------------------------------------------
+if(FALSE) {
+  
+N <- round(nrow(act.cond1) * 99 / 100)
+act.cond1.rand1k <- act.cond1 %>% 
+  slice_sample(n = N)
+
+# Mean timestamp for each substep
+subSteps <- act.cond1.rand1k %>%
+  group_by(stepNo, subStep) %>%
+  summarise(subSteptime = mean(time)) %>% 
+  arrange(subSteptime)
+
+steps <- subSteps %>%
+  group_by(stepNo) %>%
+  summarise(stepStartTime = min(subSteptime))
+
+steps
+
+
+steps <- act.cond1.rand1k %>% 
+  group_by(simNo, stepNo) %>% 
+  # mutate(stepOnset = min(knopf.act)) %>%
+  mutate(stepOnset = min(time)) %>%
+  select(simNo, stepNo, stepOnset) %>% 
+  distinct() %>% 
+  group_by(stepNo) %>% 
+  summarise(meanStepOnset = mean(stepOnset))
+
+steps
+
+}
+# -------------------------------------------------------------
 
