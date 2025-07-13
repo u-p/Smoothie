@@ -117,10 +117,15 @@ onset.cond1 <- act.cond1 %>%
   pull()
 
 
+fix.prob.cond1 <- act.cond1 %>%
+  group_by(stepNo) %>% 
+  
 # Create fixation probabilities
 fix.prob.cond1 <- act.cond1 %>%
   group_by(stepNo) %>% 
   summarise(time = mean(time), 
+            mnTime = min(time), 
+            mxTime = max(time), 
             k.fix.prob = mean(knopf.fix), 
             f.fix.prob = mean(flasche.fix)) %>% 
   arrange(time) %>% 
